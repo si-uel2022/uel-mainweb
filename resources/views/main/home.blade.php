@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-<div class="m-10">
+<div style="margin: 0px 100px">
 
         <div class="row">
             <div class="col-sm">
