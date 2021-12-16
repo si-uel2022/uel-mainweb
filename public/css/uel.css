@@ -1,0 +1,48 @@
+.nav-text
+{
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 44px;
+line-height: 66px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.selected-nav-text
+{
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 44px;
+line-height: 66px;
+
+
+color: #F590DD;
+}
+
+.body-gradient{
+    background: linear-gradient(180deg, #201622 0%, #3E1373 58.85%, #7E00A3 97.4%);
+box-shadow: 14px -8px 32px 7px rgba(0, 0, 0, 0.25);
+}
+
+.jumbotron-text
+{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 800;
+font-size: 72px;
+line-height: 91px;
+letter-spacing: 0.08em;
+
+text-shadow: 4px 9px 11px rgba(0, 0, 0, 0.25);
+background: linear-gradient(245.36deg, #0FF2F0 34.28%, #C703BA 101.84%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.jumbotron{
+    background: transparent;
+}
