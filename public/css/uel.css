@@ -62,6 +62,18 @@ background: linear-gradient(245.36deg, #0FF2F0 34.28%, #C703BA 101.84%);
 -webkit-text-fill-color: transparent;
 }
 
+.jumbotron-text-small
+{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 39px;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+}
+
 .jumbotron{
     background: transparent;
 }
@@ -84,3 +96,9 @@ letter-spacing: 0.05em;
 
 color: #FFFFFF;
 }
+
+.navbar-nav > li {
+    margin-left: 30px;
+    margin-right: 30px;
+} 
+
