@@ -16,6 +16,57 @@
     <link rel="stylesheet" href="{{asset('css/uel.css')}}">
 </head>
 <body style="background-color: black">
-    @yield('content')
+    <div class="body-gradient">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand nav-text" href="#">
+                <img src="{{asset('images/logo-uel.png')}}" width="100" height="100" alt="Logo UEL">
+            </a> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle Nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="/home" class="selected-nav-text">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/aboutus" class="nav-text">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/faq" class="nav-text">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+    
+                <a href="/registration"><button class="nav-btn">Register Team</button></a>
+            </div>
+        </nav>
+
+        @yield('content')
+    </div>
+    <div class="body-bottom">
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="{{asset('images/logo-uel.png')}}" width="130" height="130" alt="Logo UEL">
+            </div>
+            <div class="col-sm-6">
+                <p class="heading-white-text">UBAYA E-Sport League Season 2</p>
+                <p class="subheading-white-text">Report Bugs and Problem: (email SI UEL disini)</p>
+                <p class="subheading-white-text">Developed by Information System UEL 2022</p>
+            </div>
+            <div class="col-sm-4">
+                <h1>LOGO IG DAN YT</h1>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>

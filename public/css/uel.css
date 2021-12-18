@@ -43,7 +43,15 @@ color: #F590DD;
     background: linear-gradient(180deg, #201622 0%, #3E1373 58.85%, #7E00A3 97.4%);
     box-shadow: 14px -8px 32px 7px rgba(0, 0, 0, 0.25);
     border-radius: 70px 70px 0px 0px;
-    margin: 50px 50px;
+    margin: 50px 50px 0px 50px;
+    padding: 50px;
+}
+
+.body-bottom
+{
+    background: black;
+    box-shadow: 14px -8px 32px 7px rgba(0, 0, 0, 0.25);
+    margin: 0px 50px 50px;
     padding: 50px
 }
 
@@ -69,6 +77,30 @@ font-style: normal;
 font-weight: 500;
 font-size: 26px;
 line-height: 39px;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+}
+
+.heading-white-text
+{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 39px;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+}
+
+.subheading-white-text
+{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 26px;
 letter-spacing: 0.05em;
 
 color: #FFFFFF;
