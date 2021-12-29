@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminML;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -84,7 +85,8 @@ class AdminController extends Controller
 
     public function showML()
     {
-        return view('admin.adminML');
+        $tim = AdminML::All();
+        return view('admin.adminML', compact('tim'));
     }
 
     public function showPUBG()
