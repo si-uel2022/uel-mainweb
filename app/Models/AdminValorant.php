@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class AdminValorant extends Model
 {
     use HasFactory;
+
+    protected $table = "tim_valorant";
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminML;
+use App\Models\AdminPUBG;
+use App\Models\AdminValorant;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -91,11 +93,13 @@ class AdminController extends Controller
 
     public function showPUBG()
     {
-        return view('admin.adminPUBG');
+        $tim = AdminPUBG::All();
+        return view('admin.adminPUBG', compact('tim'));
     }
 
     public function showValorant()
     {
-        return view('admin.adminValorant');
+        $tim = AdminValorant::All();
+        return view('admin.adminValorant', compact('tim'));
     }
 }

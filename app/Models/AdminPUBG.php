@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class AdminPUBG extends Model
 {
     use HasFactory;
+
+    protected $table = "tim_pubg";
 }
