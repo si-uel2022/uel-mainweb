@@ -3,10 +3,10 @@
 @section("content")
     <h1>registration</h1>
 
-    <div class="div">ML
-        <form action="" enctype="multipart/form-data">
+<div class="div">ML
+    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data">
             @csrf
-        </form>
+        
     <label>Nama tim : </label>
     <input type="text" name="txtNamaTim" class="textbox">
 
@@ -16,7 +16,7 @@
         <input type="text" name="txtNamaPlayer1" class="textbox">
         <br>
         <label>Fakultas : </label> 
-        <select name="" id="" name="selFakultasPlayer1" class="textbox">
+        <select id="" name="selFakultasPlayer1" class="textbox">
             @foreach ($fakultas as $f)
             <option value="{{$f->nama}}">{{$f->nama}}</option>
             @endforeach
@@ -28,6 +28,7 @@
         <label>Angkatan : </label>
         <input type="text" name="txtAngkatanPlayer1" class="textbox">
         <br>
+        
         <label>ID Line : </label>
         <input type="text" name="txtIDLinePlayer1" class="textbox">
         <br>
@@ -66,7 +67,7 @@
         <input type="text" name="txtNamaPlayer2">
         <br>
         <label>Fakultas : </label> 
-        <select name="" id="" name="selFakultasPlayer2">
+        <select id="" name="selFakultasPlayer2">
             <option value="">Teknik</option>
             <option value="">FBE</option>
         </select>
@@ -115,7 +116,7 @@
         <input type="text" name="txtNamaPlayer3">
         <br>
         <label>Fakultas : </label> 
-        <select name="" id="" name="selFakultasPlayer3">
+        <select id="" name="selFakultasPlayer3">
             <option value="">Teknik</option>
             <option value="">FBE</option>
         </select>
@@ -156,6 +157,58 @@
         <label>Upload sertifikat vaksin : </label>
         <input type="file" name="namaFilePlayer3">
         <br>
+        <button type="submit">Submit Data</button>
     </section>
+
+    <section>
+        <h2>Official</h2>
+        <label>Nama : </label>
+        <input type="text" name="txtNamaOfficial" class="textbox">
+        <br>
+        <label>Fakultas : </label> 
+        <select id="" name="selFakultasPlayer1" class="textbox">
+            @foreach ($fakultas as $f)
+            <option value="{{$f->nama}}">{{$f->nama}}</option>
+            @endforeach
+        </select>
+        <br>
+        <label>NRP : </label>
+        <input type="text" name="txtNRPPlayer1" class="textbox">
+        <br>
+        <label>Angkatan : </label>
+        <input type="text" name="txtAngkatanPlayer1" class="textbox">
+        <br>
+        <label>ID Line : </label>
+        <input type="text" name="txtIDLinePlayer1" class="textbox">
+        <br>
+        <label>Nomor HP : </label>
+        <input type="text" name="txtNoHPPlayer1" class="textbox">
+        <br>
+        <label>Instagram : </label>
+        <input type="text" name="txtIGPlayer1" class="textbox"> 
+        <br>
+        <label>Nickname : </label>
+        <input type="text" name="txtNicknamePlayer1" class="textbox">
+        <br>
+        <label>ID Server : </label>
+        <input type="text" name="txtIDServerPlayer1" class="textbox">
+        <br>
+        <label>Hero : </label>
+        <input type="text" name="txtHeroPlayer1" class="textbox">
+        <br>
+        <label>Role : </label>
+        <input type="text" name="txtHeroPlayer1" class="textbox">
+        <br>
+        <label>Device : </label>
+        <input type="text" name="txtDevicePlayer1" class="textbox">
+        <br>
+        <label>Sebagai : </label>
+        <input type="text" name="txtSebagaiPlayer1" class="textbox">
+        <br>
+        <label>Upload sertifikat vaksin : </label>
+        <input type="file" name="namaFilePlayer1" class="textbox">
+        <br>
+    </section>
+    </form>
 </div>
 @endsection
