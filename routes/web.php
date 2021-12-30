@@ -48,4 +48,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/showML/', [App\Http\Controllers\AdminController::class, 'showML'])->name('admin.showML');
     Route::get('admin/showPUBG/', [App\Http\Controllers\AdminController::class, 'showPUBG'])->name('admin.showPUBG');
     Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
+    Route::get('admin/showPlayerML/{id}', [App\Http\Controllers\AdminController::class, 'showPlayerML'])->name('admin.showPlayerML');
+    Route::get('admin/acceptTim/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTim'])->name('admin.acceptTim');
+    Route::get('admin/rejectTim/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTim'])->name('admin.rejectTim');
 });

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AdminML;
-use App\Models\AdminPUBG;
-use App\Models\AdminValorant;
+use App\Models\ML;
+use App\Models\PUBG;
+use App\Models\Valorant;
+use App\Models\Tim_ML;
+use App\Models\Tim_PUBG;
+use App\Models\Tim_Valorant;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -87,19 +90,40 @@ class AdminController extends Controller
 
     public function showML()
     {
-        $tim = AdminML::All();
+        $tim = Tim_ML::All();
         return view('admin.adminML', compact('tim'));
     }
 
     public function showPUBG()
     {
-        $tim = AdminPUBG::All();
+        $tim = Tim_PUBG::All();
         return view('admin.adminPUBG', compact('tim'));
     }
 
     public function showValorant()
     {
-        $tim = AdminValorant::All();
+        $tim = Tim_Valorant::All();
         return view('admin.adminValorant', compact('tim'));
+    }
+
+    public function showPlayerML($id)
+    {
+        $tim = Tim_ML::find($id);
+        $player = $tim->players;
+        return view('admin.timML', compact('player'));
+    }
+
+    public function acceptTim(Tim_ML $tim)
+    {
+        $tim->status = "Accepted";
+        $tim->save();
+        return redirect()->route('admin');
+    }
+
+    public function rejectTim(Tim_ML $tim)
+    {
+        $tim->status = "Rejected";
+        $tim->save();
+        return redirect()->route('admin');
     }
 }

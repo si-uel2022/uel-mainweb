@@ -11,4 +11,10 @@ class Tim_ML extends Model
 
     protected $table = "tim_ml";
     protected $guarded = [];
+    public $timestamps = false;
+
+    public function players()
+    {
+        return $this->hasMany('App\Models\ML', 'id_tim', 'id');
+    }
 }

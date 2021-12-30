@@ -11,4 +11,9 @@ class ML extends Model
 
     protected $table = "ml";
     protected $guarded = [];
+
+    public function tim()
+    {
+        return $this->belongsTo('App\Models\TIM_ML', 'id_tim', 'id');
+    }
 }

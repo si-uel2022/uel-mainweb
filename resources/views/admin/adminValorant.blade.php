@@ -8,6 +8,7 @@
     <tr>
         <th>No</th>
         <th>Nama Tim</th>
+        <th>Status</th>
     </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $t->nama }}</td>
+            <td>{{ $t->status }}</td>
         </tr>
         @endforeach
     </tbody>
