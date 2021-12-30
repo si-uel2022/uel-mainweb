@@ -16,4 +16,6 @@ class ML extends Model
     {
         return $this->belongsTo('App\Models\TIM_ML', 'id_tim', 'id');
     }
+
+    public $timestamps = false;
 }

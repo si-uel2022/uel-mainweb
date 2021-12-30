@@ -11,4 +11,5 @@ class Riwayat_Valorant extends Model
 
     protected $table = "riwayat_valorant";
     protected $guarded = [];
+    public $timestamps = false;
 }

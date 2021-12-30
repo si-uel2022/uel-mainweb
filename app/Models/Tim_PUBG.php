@@ -11,4 +11,5 @@ class Tim_PUBG extends Model
 
     protected $table = "tim_pubg";
     protected $guarded = [];
+    public $timestamps = false;
 }

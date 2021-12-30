@@ -11,4 +11,5 @@ class Valorant extends Model
 
     protected $table = "valorant";
     protected $guarded = [];
+    public $timestamps = false;
 }

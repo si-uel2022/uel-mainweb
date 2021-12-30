@@ -26,6 +26,21 @@
         @foreach ($player as $p)
         <tr>
             <td>{{ $p->nama }}</td>
+            <td>{{ $p->fakultas }}</td>
+            <td>{{ $p->nrp }}</td>
+            <td>{{ $p->angkatan }}</td>
+            <td>{{ $p->id_line }}</td>
+            <td>{{ $p->nomor }}</td>
+            <td>{{ $p->instagram }}</td>
+            <td>{{ $p->nickname }}</td>
+            <td>{{ $p->id_server }}</td>
+            <td>{{ $p->hero }}</td>
+            <td>{{ $p->role }}</td>
+            <td>{{ $p->device }}</td>
+            <td>{{ $p->sebagai }}</td>
+            <td>{{ $p->vaksin }}</td>
+            <td>{{ $p->domisili }}</td>
+            <td>{{ $p->ktm }}</td>
         </tr>
         @endforeach
     </tbody>

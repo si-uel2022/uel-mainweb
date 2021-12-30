@@ -11,4 +11,5 @@ class Riwayat_PUBG extends Model
 
     protected $table = "riwayat_pubg";
     protected $guarded = [];
+    public $timestamps = false;
 }

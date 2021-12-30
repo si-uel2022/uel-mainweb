@@ -11,4 +11,5 @@ class PUBG extends Model
 
     protected $table = "pubg";
     protected $guarded = [];
+    public $timestamps = false;
 }

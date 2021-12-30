@@ -11,4 +11,5 @@ class Riwayat_ML extends Model
 
     protected $table = "riwayat_ml";
     protected $guarded = [];
+    public $timestamps = false;
 }

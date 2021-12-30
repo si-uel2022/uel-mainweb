@@ -11,4 +11,5 @@ class Tim_Valorant extends Model
 
     protected $table = "tim_valorant";
     protected $guarded = [];
+    public $timestamps = false;
 }
