@@ -113,6 +113,16 @@ class AdminController extends Controller
         return view('admin.timML', compact('player'));
     }
 
+    public function detailPlayerML(Request $request)
+    {
+        $id = $request->id;
+        $player = ML::find($id);
+
+        return response()->json(array(
+            'msg' => view('admin.detailModal', compact('player'))->render()
+        ),200);
+    }
+
     public function acceptTim(Tim_ML $tim)
     {
         $tim->status = "Accepted";

@@ -10,4 +10,9 @@ class Fakultas extends Model
     use HasFactory;
 
     protected $table = "fakultas";
+
+    public function players()
+    {
+        return $this->hasMany('App\Models\ML', 'id_fakultas', 'id');
+    }
 }
