@@ -12,4 +12,9 @@ class Tim_PUBG extends Model
     protected $table = "tim_pubg";
     protected $guarded = [];
     public $timestamps = false;
+
+    public function players()
+    {
+        return $this->hasMany('App\Models\PUBG', 'id_tim', 'id');
+    }
 }

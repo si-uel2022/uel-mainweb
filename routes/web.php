@@ -45,11 +45,21 @@ Route::get('/registration/submitValorant', [App\Http\Controllers\RegistControlle
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+    //ML
     Route::get('admin/showML/', [App\Http\Controllers\AdminController::class, 'showML'])->name('admin.showML');
-    Route::get('admin/showPUBG/', [App\Http\Controllers\AdminController::class, 'showPUBG'])->name('admin.showPUBG');
-    Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
     Route::get('admin/showPlayerML/{id}', [App\Http\Controllers\AdminController::class, 'showPlayerML'])->name('admin.showPlayerML');
     Route::post('admin/detailPlayerML/', [App\Http\Controllers\AdminController::class, 'detailPlayerML'])->name('admin.showDetailML');
-    Route::get('admin/acceptTim/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTim'])->name('admin.acceptTim');
-    Route::get('admin/rejectTim/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTim'])->name('admin.rejectTim');
+    Route::get('admin/acceptTimML/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimML'])->name('admin.acceptTimML');
+    Route::get('admin/rejectTimML/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimML'])->name('admin.rejectTimML');
+
+    //PUBG
+    Route::get('admin/showPUBG/', [App\Http\Controllers\AdminController::class, 'showPUBG'])->name('admin.showPUBG');
+    Route::get('admin/showPlayerPUBG/{id}', [App\Http\Controllers\AdminController::class, 'showPlayerPUBG'])->name('admin.showPlayerPUBG');
+    Route::post('admin/detailPlayerPUBG/', [App\Http\Controllers\AdminController::class, 'detailPlayerPUBG'])->name('admin.showDetailPUBG');
+    Route::get('admin/acceptTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimPUBG'])->name('admin.acceptTimPUBG');
+    Route::get('admin/rejectTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimPUBG'])->name('admin.rejectTimPUBG');
+
+    //Valorant
+    Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
 });

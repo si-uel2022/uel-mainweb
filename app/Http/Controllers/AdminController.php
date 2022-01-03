@@ -113,24 +113,55 @@ class AdminController extends Controller
         return view('admin.timML', compact('player'));
     }
 
+    public function showPlayerPUBG($id)
+    {
+        $tim = Tim_PUBG::find($id);
+        $player = $tim->players;
+        return view('admin.timPUBG', compact('player'));
+    }
+
     public function detailPlayerML(Request $request)
     {
         $id = $request->id;
         $player = ML::find($id);
 
         return response()->json(array(
-            'msg' => view('admin.detailModal', compact('player'))->render()
+            'msg' => view('admin.detailModalML', compact('player'))->render()
         ),200);
     }
 
-    public function acceptTim(Tim_ML $tim)
+    public function detailPlayerPUBG(Request $request)
+    {
+        $id = $request->id;
+        $player = PUBG::find($id);
+
+        return response()->json(array(
+            'msg' => view('admin.detailModalPUBG', compact('player'))->render()
+        ),200);
+    }
+
+    public function acceptTimML(Tim_ML $tim)
     {
         $tim->status = "Accepted";
         $tim->save();
         return redirect()->route('admin');
     }
 
-    public function rejectTim(Tim_ML $tim)
+    public function rejectTimML(Tim_ML $tim)
+    {
+        $tim->status = "Rejected";
+        $tim->save();
+        return redirect()->route('admin');
+    }
+
+    public function acceptTimPUBG(Tim_PUBG $tim)
+    {
+        $tim->status = "Accepted";
+        $tim->save();
+        return redirect()->route('admin');
+    }
+
+    public function rejectTimPUBG(Tim_PUBG $tim)
     {
         $tim->status = "Rejected";
         $tim->save();

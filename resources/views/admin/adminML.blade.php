@@ -21,8 +21,8 @@
             <td>{{ $t->status }}</td>
             <td> <a href="{{ route('admin.showPlayerML',$t->id) }}">Show</a> </td>
             <td> 
-                <a href="{{ url('admin/acceptTim/' . $t->id) }}" class="btn btn-info">Accept</a>
-                <a href="{{ url('admin/rejectTim/' . $t->id) }}" class="btn btn-danger">Reject</a> 
+                <a href="{{ url('admin/acceptTimML/' . $t->id) }}" class="btn btn-info">Accept</a>
+                <a href="{{ url('admin/rejectTimML/' . $t->id) }}" class="btn btn-danger">Reject</a> 
             </td>
         </tr>
         @endforeach
