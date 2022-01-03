@@ -3,7 +3,20 @@
 @section('title', 'Admin')
 
 @section('content')
-    <a href="/admin/showML">Show ML</a> <br>
-    <a href="/admin/showPUBG">Show PUBG</a> <br>
-    <a href="/admin/showValorant">Show Valorant</a>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/admin/showML" class="btn btn-primary">Show ML</a> <br>
+        </div>
+        <div class="col-sm-4">
+            <a href="/admin/showPUBG" class="btn btn-primary">Show PUBG</a> <br>
+        </div>
+        <div class="col-sm-4">
+            <a href="/admin/showValorant" class="btn btn-primary">Show Valorant</a>
+        </div>
+    </div>
+</div>
+    
+    
+    
 @endsection

@@ -12,4 +12,9 @@ class Tim_Valorant extends Model
     protected $table = "tim_valorant";
     protected $guarded = [];
     public $timestamps = false;
+
+    public function players()
+    {
+        return $this->hasMany('App\Models\Valorant', 'id_tim', 'id');
+    }
 }

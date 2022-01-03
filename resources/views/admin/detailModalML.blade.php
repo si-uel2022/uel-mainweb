@@ -1,4 +1,5 @@
 <div class="portlet">
+    <h5>{{ $player->nama }}</h5>
     <ul>
         <li>ID Server: {{ $player->id_server }}</li>
         <li>Nickname: {{ $player->nickname }}</li>

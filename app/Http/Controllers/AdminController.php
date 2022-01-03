@@ -120,6 +120,13 @@ class AdminController extends Controller
         return view('admin.timPUBG', compact('player'));
     }
 
+    public function showPlayerValorant($id)
+    {
+        $tim = Tim_Valorant::find($id);
+        $player = $tim->players;
+        return view('admin.timValorant', compact('player'));
+    }
+
     public function detailPlayerML(Request $request)
     {
         $id = $request->id;
@@ -140,31 +147,61 @@ class AdminController extends Controller
         ),200);
     }
 
+    public function detailPlayerValorant(Request $request)
+    {
+        $id = $request->id;
+        $player = Valorant::find($id);
+
+        return response()->json(array(
+            'msg' => view('admin.detailModalValorant', compact('player'))->render()
+        ),200);
+    }
+
     public function acceptTimML(Tim_ML $tim)
     {
         $tim->status = "Accepted";
+        $nama = $tim->nama;
         $tim->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.showML')->with('status_accept', 'Accept ' . $nama);
     }
 
     public function rejectTimML(Tim_ML $tim)
     {
         $tim->status = "Rejected";
+        $nama = $tim->nama;
         $tim->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.showML')->with('status_reject', 'Reject ' . $nama);
     }
 
     public function acceptTimPUBG(Tim_PUBG $tim)
     {
         $tim->status = "Accepted";
+        $nama = $tim->nama;
         $tim->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.showPUBG')->with('status_accept', 'Accept ' . $nama);
     }
 
     public function rejectTimPUBG(Tim_PUBG $tim)
     {
         $tim->status = "Rejected";
+        $nama = $tim->nama;
         $tim->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.showPUBG')->with('status_reject', 'Reject ' . $nama);
+    }
+
+    public function acceptTimValorant(Tim_Valorant $tim)
+    {
+        $tim->status = "Accepted";
+        $nama = $tim->nama;
+        $tim->save();
+        return redirect()->route('admin.showValorant')->with('status_accept', 'Accept ' . $nama);
+    }
+
+    public function rejectTimValorant(Tim_Valorant $tim)
+    {
+        $tim->status = "Rejected";
+        $nama = $tim->nama;
+        $tim->save();
+        return redirect()->route('admin.showValorant')->with('status_reject', 'Reject ' . $nama);
     }
 }

@@ -3,6 +3,18 @@
 @section('title', 'Admin')
 
 @section('content')
+@if(session('status_accept'))
+<div class="alert alert-success" role="alert">
+    {{ session('status_accept') }}
+</div>
+@endif
+
+@if(session('status_reject'))
+<div class="alert alert-danger" role="alert">
+    {{ session('status_reject') }}
+</div>
+@endif
+
 <table id="table" class="display" style="width:100%">
     <thead>
     <tr align="center">

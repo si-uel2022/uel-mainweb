@@ -62,4 +62,8 @@ Route::middleware(['auth'])->group(function(){
 
     //Valorant
     Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
+    Route::get('admin/showPlayerValorant/{id}', [App\Http\Controllers\AdminController::class, 'showPlayerValorant'])->name('admin.showPlayerValorant');
+    Route::post('admin/detailPlayerValorant/', [App\Http\Controllers\AdminController::class, 'detailPlayerValorant'])->name('admin.showDetailValorant');
+    Route::get('admin/acceptTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimValorant'])->name('admin.acceptTimValorant');
+    Route::get('admin/rejectTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimValorant'])->name('admin.rejectTimValorant');
 });

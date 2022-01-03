@@ -12,4 +12,14 @@ class Valorant extends Model
     protected $table = "valorant";
     protected $guarded = [];
     public $timestamps = false;
+
+    public function tim()
+    {
+        return $this->belongsTo('App\Models\TIM_Valorant', 'id_tim', 'id');
+    }
+
+    public function fakultas()
+    {
+        return $this->belongsTo('App\Models\Fakultas', 'id_fakultas', 'id');
+    }
 }
