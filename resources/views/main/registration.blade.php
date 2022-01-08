@@ -150,6 +150,14 @@
                 <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
+
+                <br><br>
+                <h2 class="bolded">Riwayat Turnamen</h2>
+                <div class="row">
+                    <textarea name="txtRiwayatPlayer{{$i}}" class="textbox form-control" cols="30" rows="10">
+                        
+                    </textarea>
+                </div>
             </section>
             <br><br>
             <hr class="border border-primary"/>

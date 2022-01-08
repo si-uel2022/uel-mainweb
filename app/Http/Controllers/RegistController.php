@@ -26,11 +26,14 @@ class RegistController extends Controller
         $tim_ml = new Tim_ML();
         $tim_ml->nama = $request->txtNamaTim;
         $tim_ml->status = "Proses";
-        $tim_ml->logo = "url_logo";
+
+        $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
+            $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
+            $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
+            $tim_ml->logo = $namaFileLogo;
         $tim_ml->save();
 
-        for ($i=1; $i <= 3; $i++) { 
-            //dd($request->get("txtNamaPlayer".$i));
+        for ($i=1; $i <= 1; $i++) { 
             $player = new ML();
             $player->nama = $request->get("txtNamaPlayer".$i);
             $player->fakultas = $request->get("selFakultasPlayer".$i);
@@ -51,7 +54,25 @@ class RegistController extends Controller
             $player->ktm = "url_ktm".$i;
             $player->id_tim = $tim_ml->id;
             $player->id_fakultas = 1;
+            
+            $fotoExt = $request->file('inpFotoPlayer'.$i)->getClientOriginalExtension();
+            $namaFileFoto = 'UEL2022_Foto_'.$request->get("txtNamaPlayer".$i).".".$fotoExt;
+            $path = $request->file('inpFotoPlayer'.$i)->move('file_foto', $namaFileFoto);
+            $player->foto = $namaFileFoto;
+
+            $vaksinExt = $request->file('inpVaksinPlayer'.$i)->getClientOriginalExtension();
+            $namaFileVaksin = 'UEL2022_Vaksin_'.$request->get("txtNamaPlayer".$i).".".$vaksinExt;
+            $path = $request->file('inpVaksinPlayer'.$i)->move('file_vaksin', $namaFileVaksin);
+            $player->vaksin = $namaFileVaksin;
+
             $player->save();
+
+
+            $riwayat = new Riwayat_ML();
+            $riwayat->keterangan = $request->get("txtRiwayatPlayer".$i);
+            $riwayat->id_player = $player->id;
+            $riwayat->save();
+            
         }
 
         return back();

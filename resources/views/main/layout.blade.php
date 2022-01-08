@@ -52,14 +52,14 @@
 
         @yield('content')
     </div>
-    <div class="body-bottom">
+    <div class="body-bottom text-center">
         <div class="row">
             <div class="col-sm-2">
                 <img src="{{asset('images/logo-uel.png')}}" width="130" height="130" alt="Logo UEL">
             </div>
             <div class="col-sm-6">
                 <p class="heading-white-text">UBAYA E-Sport League Season 2</p>
-                <p class="subheading-white-text">Report Bugs and Problem: (email SI UEL disini)</p>
+                <p class="subheading-white-text">Report Bugs and Problem: si.uel2022@gmail.com</p>
                 <p class="subheading-white-text">Developed by Information System UEL 2022</p>
             </div>
             <div class="col-sm-4">
