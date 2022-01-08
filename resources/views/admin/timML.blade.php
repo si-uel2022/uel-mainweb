@@ -5,7 +5,7 @@
 @section('content')
 <table id="table" class="display" style="width:100%">
     <thead>
-    <tr align="center">
+    <tr align="center" style="color: white">
         <th>No</th>
         <th>Nama</th>
         <th>NRP</th>
