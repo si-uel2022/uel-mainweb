@@ -25,7 +25,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $p->nama }}</td>
             <td>{{ $p->nrp }}</td>
-            <td>{{ $p->fakultas->nama }}</td>
+            <td>{{ $p->fakultas}}</td>
             <td>{{ $p->angkatan }}</td>
             <td>{{ $p->id_line }}</td>
             <td>{{ $p->nomor }}</td>

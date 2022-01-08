@@ -20,7 +20,7 @@
 <div class="div" id="div-ml">
     <h2>Mobile Legends</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data">
+    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data" method="POST">
     @csrf
     
     <div class="row">
@@ -155,7 +155,7 @@
                 <h2 class="bolded">Riwayat Turnamen</h2>
                 <div class="row">
                     <textarea name="txtRiwayatPlayer{{$i}}" class="textbox form-control" cols="30" rows="10">
-                        
+
                     </textarea>
                 </div>
             </section>
