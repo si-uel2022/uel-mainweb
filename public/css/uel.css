@@ -143,10 +143,10 @@ label{
     color: #F4F4F4;
 }
 
-h2{
+h1, h2, h3, hr{
     color: #F4F4F4;
 }
 
-h1{
-    color: #F4F4F4;
+.bolded{
+    background-color: #C703BA;
 }
