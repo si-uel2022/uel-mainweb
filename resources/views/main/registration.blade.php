@@ -39,7 +39,7 @@
     <div class="row text-center">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <button type="button" class="nav-btn" data-toggle="modal" data-target="#guidelineFotoModal">Guideline Foto</button>
+            <button type="button" class="nav-btn" data-toggle="modal" data-target="#guidelineBA">Guideline</button>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -143,49 +143,6 @@
     
     </form>
 
-    
-
-    <div class="modal fade" id="guidelineFotoModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Guideline Foto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">   
-                    <ol>
-                        <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
-                        </li>
-                        <li>Foto memiliki kualitas HD
-                        </li>
-                        <li>Player mengumpulkan foto dengan 3 pose berbeda yang terdiri dari:
-                            <ul>
-                                <li>1 gaya melipat tangan (WAJIB)
-                                </li>
-                                <li>2 gaya bebas yang sudah disepakati oleh masing-masing tim
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Menggunakan pakaian berkerah dengan warna senada untuk setiap tim</li>
-                        <li>Pastikan foto dalam kondisi terang
-                        </li>
-                        <li>Foto wajib dikumpulkan dengan format nama: Nama Tim_Nama
-                        </li>
-                    </ol>
-
-                    <p style="text-align: center">Contoh foto :</p>
-                    <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Tutup
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="div" id="div-ml">
@@ -990,6 +947,70 @@
 
                 <p style="text-align: center">Contoh foto :</p>
                 <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="guidelineBA" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Guideline Brand Ambassador</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 style="text-align: center">Guideline Foto</h5>   
+                <ol>
+                    <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
+                    </li>
+                    <li>Foto memiliki kualitas HD
+                    </li>
+                    <li>Peserta BA mengumpulkan foto dengan 2 pose berbeda yang terdiri dari:
+                        <ul>
+                            <li>1 foto dengan gaya formal
+                            </li>
+                            <li>1 foto gaya bebas semenarik mungkin sesuai diri masing-masing
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Foto menggunakan pakaian bebas, rapi, dan sopan</li>
+                    <li>Pastikan foto dalam kondisi terang
+                    </li>
+                    <li>Foto wajib dikumpulkan dengan format nama: Fakultas_Nama Lengkap
+                    </li>
+                    <li>Foto dalam bentuk jpg/png
+                    </li>
+                </ol>
+
+                <p style="text-align: center">Contoh foto 1 :</p>
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto1.png")}}" alt="Contoh Foto">
+                <p style="text-align: center">Contoh foto 2 :</p>
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto2.png")}}" alt="Contoh Foto">
+
+                <hr>
+                <h5 style="text-align: center">Guideline Portofolio</h5>   
+                <ol>
+                    <li>Portofolio terdiri dari:
+                        <ul>
+                            <li>Minimal 3 foto diri terbaik. Foto boleh diambil dari instagram masing-masing. Foto menunjukkan muka dengan jelas dan tidak mengandung unsur SARA, pornografi, ataupun kekerasan
+                            </li>
+                            <li>Data diri yang minimal terdiri dari nama lengkap, fakultas, angkatan, dan NRP
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Portofolio dalam bentuk pdf dengan ketentuan ukuran portofolio bebas asalkan memuat minimal kedua hal yang telah disebut pada nomor (1)
+                    </li>
+                    <li>Portofolio dibuat sekreatif mungkin dengan memperhatikan ketentuan yang telah diberikan.
+                    </li>
+                </ol>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
