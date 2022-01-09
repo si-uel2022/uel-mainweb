@@ -66,4 +66,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('admin/detailPlayerValorant/', [App\Http\Controllers\AdminController::class, 'detailPlayerValorant'])->name('admin.showDetailValorant');
     Route::get('admin/acceptTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimValorant'])->name('admin.acceptTimValorant');
     Route::get('admin/rejectTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimValorant'])->name('admin.rejectTimValorant');
+
+    //Brand Ambassador
+    Route::get('admin/showBA/', [App\Http\Controllers\AdminController::class, 'showBA'])->name('admin.showBA');
+    Route::post('admin/detailBA/', [App\Http\Controllers\AdminController::class, 'detailBA'])->name('admin.showDetailBA');
 });
