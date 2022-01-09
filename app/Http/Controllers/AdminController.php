@@ -301,4 +301,13 @@ class AdminController extends Controller
     
         return response()->download(public_path($fileName));
     }
+
+    public function downloadPorto(BA $ba)
+    {
+        $nama = $ba->portofolio;
+        $path = 'ambassador/'.$nama;
+
+        $filepath = public_path($path);
+        return Response()->download($filepath);
+    }
 }

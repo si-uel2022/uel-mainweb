@@ -35,11 +35,11 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $t->nama }}</td>
                 <td>{{ $t->status }}</td>
-                <td> <a href="{{ route('admin.showPlayerValorant',$t->id) }}">Show</a> </td>
-                <td> <a href="{{ url('admin/downloadValorant/' . $t->id) }}">Download</a> </td>
+                <td> <a href="{{ route('admin.showPlayerValorant',$t->id) }}" class="btn btn-primary">Show</a> </td>
+                <td> <a href="{{ url('admin/downloadValorant/' . $t->id) }}" class="btn btn-primary">Download <i class="fa fa-download"></i></a> </td>
                 <td> 
-                    <a href="{{ url('admin/acceptTimValorant/' . $t->id) }}" class="btn btn-info">Accept</a>
-                    <a href="{{ url('admin/rejectTimValorant/' . $t->id) }}" class="btn btn-danger">Reject</a> 
+                    <a href="{{ url('admin/acceptTimValorant/' . $t->id) }}" class="btn btn-info">Accept <i class="fa fa-check"></i></a>
+                    <a href="{{ url('admin/rejectTimValorant/' . $t->id) }}" class="btn btn-danger">Reject <i class="fa fa-close"></i></a> 
                 </td>
             </tr>
             @endforeach

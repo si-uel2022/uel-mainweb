@@ -93,7 +93,8 @@
                 <p class="subheading-white-text">Developed by Information System UEL 2022</p>
             </div>
             <div class="col-sm-4">
-                <h1>LOGO IG DAN YT</h1>
+                <a href="https://www.instagram.com/uel2022_/"><img src="{{asset('images/logo_ig.png')}}" width="75" height="75" alt="Instagram UEL"></a>
+                <a href=""><img src="{{asset('images/logo_youtube.png')}}" width="130" height="130" alt="Youtube UEL"></a>
             </div>
         </div>
     </div>
