@@ -238,6 +238,24 @@ class AdminController extends Controller
         return redirect()->route('admin.showValorant')->with('status_reject', 'Reject ' . $nama);
     }
 
+    public function acceptBA(BA $ba)
+    {
+        $ba->status = "Accepted";
+        $nama = $ba->nama;
+        $ba->save();
+        Mail::to($ba->email)->send(new EmailAccept($ba->nama));
+        return redirect()->route('admin.showBA')->with('status_accept', 'Accept ' . $nama);
+    }
+
+    public function rejectBA(BA $ba)
+    {
+        $ba->status = "Rejected";
+        $nama = $ba->nama;
+        $ba->save();
+        Mail::to($ba->email)->send(new EmailReject($ba->nama));
+        return redirect()->route('admin.showBA')->with('status_reject', 'Reject ' . $nama);
+    }
+
     public function downloadML(Tim_ML $tim)
     {
         $nama = $tim->nama;

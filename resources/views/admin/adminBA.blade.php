@@ -28,7 +28,9 @@
             <th>Line</th>
             <th>WhatsApp</th>
             <th>Instagram</th>
+            <th>Status</th>
             <th>Download</th>
+            <th>Action</th>
             <th>Detail</th>
         </tr>
         </thead>
@@ -42,14 +44,19 @@
                 <td>{{ $b->line }}</td>
                 <td>{{ $b->whatsapp }}</td>
                 <td>{{ $b->instagram }}</td>
+                <td>{{ $b->status }}</td>
                 <td>
                     <a href="{{ url('admin/downloadPorto/' . $b->id) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Portofolio</a>
                     <a href="{{ url('admin/downloadBA/' . $b->id) }}" class="btn btn-primary"><i class="fa fa-picture-o"></i> Foto</a>
                 </td>
                 <td>
+                    <a href="{{ url('admin/acceptBA/' . $b->id) }}" class="btn btn-info">Accept <i class="fa fa-check"></i></a>
+                    <a href="{{ url('admin/rejectBA/' . $b->id) }}" class="btn btn-danger">Reject <i class="fa fa-close"></i></a>
+                </td>
+                <td> 
                     <a href="#modal_detail" class="btn btn-primary" data-toggle="modal" onclick="getData({{ $b->id }});">
                         Detail
-                    </a>
+                    </a> 
                 </td>
             </tr>
             @endforeach
