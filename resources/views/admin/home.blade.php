@@ -30,6 +30,9 @@
     <div class="col-sm">
         <a href="/admin/showValorant" class="nav-btn">Show Valorant</a>
     </div>
+    <div class="col-sm">
+        <a href="/admin/showBA" class="nav-btn">Show Brand Ambassador</a>
+    </div>
 </div>
 
 @endsection

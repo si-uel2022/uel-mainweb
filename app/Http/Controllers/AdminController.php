@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ML;
 use App\Models\PUBG;
 use App\Models\Valorant;
+use App\Models\BA;
 use App\Models\Tim_ML;
 use App\Models\Tim_PUBG;
 use App\Models\Tim_Valorant;
@@ -106,6 +107,12 @@ class AdminController extends Controller
         return view('admin.adminValorant', compact('tim'));
     }
 
+    public function showBA()
+    {
+        $ba = BA::All();
+        return view('admin.adminBA', compact('ba'));
+    }
+
     public function showPlayerML($id)
     {
         $tim = Tim_ML::find($id);
@@ -154,6 +161,16 @@ class AdminController extends Controller
 
         return response()->json(array(
             'msg' => view('admin.detailModalValorant', compact('player'))->render()
+        ),200);
+    }
+
+    public function detailBA(Request $request)
+    {
+        $id = $request->id;
+        $person = BA::find($id);
+
+        return response()->json(array(
+            'msg' => view('admin.detailModalBA', compact('person'))->render()
         ),200);
     }
 
