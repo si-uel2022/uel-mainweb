@@ -60,6 +60,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('admin/detailPlayerPUBG/', [App\Http\Controllers\AdminController::class, 'detailPlayerPUBG'])->name('admin.showDetailPUBG');
     Route::get('admin/acceptTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimPUBG'])->name('admin.acceptTimPUBG');
     Route::get('admin/rejectTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimPUBG'])->name('admin.rejectTimPUBG');
+    Route::get('admin/downloadPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'downloadPUBG'])->name('admin.downloadPUBG');
 
     //Valorant
     Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
@@ -67,6 +68,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('admin/detailPlayerValorant/', [App\Http\Controllers\AdminController::class, 'detailPlayerValorant'])->name('admin.showDetailValorant');
     Route::get('admin/acceptTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimValorant'])->name('admin.acceptTimValorant');
     Route::get('admin/rejectTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimValorant'])->name('admin.rejectTimValorant');
+    Route::get('admin/downloadValorant/{tim}', [App\Http\Controllers\AdminController::class, 'downloadValorant'])->name('admin.downloadValorant');
 
     //Brand Ambassador
     Route::get('admin/showBA/', [App\Http\Controllers\AdminController::class, 'showBA'])->name('admin.showBA');

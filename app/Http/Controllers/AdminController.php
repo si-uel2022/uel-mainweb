@@ -151,9 +151,10 @@ class AdminController extends Controller
     {
         $id = $request->id;
         $player = PUBG::find($id);
+        $tim = Tim_PUBG::find($player->id_tim);
 
         return response()->json(array(
-            'msg' => view('admin.detailModalPUBG', compact('player'))->render()
+            'msg' => view('admin.detailModalPUBG', compact('player', 'tim'))->render()
         ),200);
     }
 
@@ -161,9 +162,10 @@ class AdminController extends Controller
     {
         $id = $request->id;
         $player = Valorant::find($id);
+        $tim = Tim_Valorant::find($player->id_tim);
 
         return response()->json(array(
-            'msg' => view('admin.detailModalValorant', compact('player'))->render()
+            'msg' => view('admin.detailModalValorant', compact('player', 'tim'))->render()
         ),200);
     }
 
@@ -226,6 +228,56 @@ class AdminController extends Controller
     }
 
     public function downloadML(Tim_ML $tim)
+    {
+        $nama = $tim->nama;
+
+        $zip = new ZipArchive;
+   
+        $fileName = $nama.'.zip';
+
+        $path = 'file_foto/'.$nama;
+   
+        if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        {
+            $files = File::files(public_path($path));
+   
+            foreach ($files as $key => $value) {
+                $relativeNameInZipFile = basename($value);
+                $zip->addFile($value, $relativeNameInZipFile);
+            }
+             
+            $zip->close();
+        }
+    
+        return response()->download(public_path($fileName));
+    }
+
+    public function downloadPUBG(Tim_PUBG $tim)
+    {
+        $nama = $tim->nama;
+
+        $zip = new ZipArchive;
+   
+        $fileName = $nama.'.zip';
+
+        $path = 'file_foto/'.$nama;
+   
+        if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        {
+            $files = File::files(public_path($path));
+   
+            foreach ($files as $key => $value) {
+                $relativeNameInZipFile = basename($value);
+                $zip->addFile($value, $relativeNameInZipFile);
+            }
+             
+            $zip->close();
+        }
+    
+        return response()->download(public_path($fileName));
+    }
+
+    public function downloadValorant(Tim_Valorant $tim)
     {
         $nama = $tim->nama;
 

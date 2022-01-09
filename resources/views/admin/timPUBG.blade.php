@@ -3,44 +3,46 @@
 @section('title', 'Admin')
 
 @section('content')
-<table id="table" class="display" style="width:100%">
-    <thead>
-    <tr align="center" style="color: white">
-        <th>No</th>
-        <th>Nama</th>
-        <th>NRP</th>
-        <th>Fakultas</th>
-        <th>Angkatan</th>
-        <th>ID Line</th>
-        <th>No WA</th>
-        <th>Instagram</th>
-        <th>Domisili</th>
-        <th>Sebagai</th>
-        <th>Detail Player</th>
-    </tr>
-    </thead>
-    <tbody>
-        @foreach ($player as $p)
-        <tr align="center">
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $p->nama }}</td>
-            <td>{{ $p->nrp }}</td>
-            <td>{{ $p->fakultas->nama }}</td>
-            <td>{{ $p->angkatan }}</td>
-            <td>{{ $p->id_line }}</td>
-            <td>{{ $p->nomor }}</td>
-            <td>{{ $p->instagram }}</td>
-            <td>{{ $p->sebagai }}</td>
-            <td>{{ $p->domisili }}</td>
-            <td>
-                <a href="#modal_player" class="btn btn-primary" data-toggle="modal" onclick="getData({{ $p->id }});">
-                    Detail Player
-                </a>
-            </td>
+<div class="table-responsive">
+    <table id="table" class="display" style="width:100%">
+        <thead>
+        <tr align="center" style="color: white">
+            <th>No</th>
+            <th>Nama</th>
+            <th>NRP</th>
+            <th>Fakultas</th>
+            <th>Angkatan</th>
+            <th>ID Line</th>
+            <th>No WA</th>
+            <th>Instagram</th>
+            <th>Domisili</th>
+            <th>Sebagai</th>
+            <th>Detail Player</th>
         </tr>
-        @endforeach
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach ($player as $p)
+            <tr align="center">
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $p->nama }}</td>
+                <td>{{ $p->nrp }}</td>
+                <td>{{ $p->fakultas }}</td>
+                <td>{{ $p->angkatan }}</td>
+                <td>{{ $p->id_line }}</td>
+                <td>{{ $p->nomor }}</td>
+                <td>{{ $p->instagram }}</td>
+                <td>{{ $p->sebagai }}</td>
+                <td>{{ $p->domisili }}</td>
+                <td>
+                    <a href="#modal_player" class="btn btn-primary" data-toggle="modal" onclick="getData({{ $p->id }});">
+                        Detail Player
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 <div class="modal fade" id="modal_player" tabindex="-1" role="basic" aria-hidden="true">
     <div class="modal-dialog">

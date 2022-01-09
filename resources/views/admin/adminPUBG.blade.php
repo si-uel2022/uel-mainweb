@@ -25,6 +25,7 @@
             <th>Nama Tim</th>
             <th>Status</th>
             <th>List Player</th>
+            <th>Foto Player</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -35,6 +36,7 @@
                 <td>{{ $t->nama }}</td>
                 <td>{{ $t->status }}</td>
                 <td> <a href="{{ route('admin.showPlayerPUBG',$t->id) }}">Show</a> </td>
+                <td> <a href="{{ url('admin/downloadPUBG/' . $t->id) }}">Download</a> </td>
                 <td> 
                     <a href="{{ url('admin/acceptTimPUBG/' . $t->id) }}" class="btn btn-info">Accept</a>
                     <a href="{{ url('admin/rejectTimPUBG/' . $t->id) }}" class="btn btn-danger">Reject</a> 

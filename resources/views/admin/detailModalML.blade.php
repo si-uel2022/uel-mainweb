@@ -6,7 +6,6 @@
         <li>Hero: {{ $player->hero }}</li>
         <li>Role: {{ $player->role }}</li>
         <li>Device: {{ $player->device }}</li>
-        <li>Nama Tim: {{ $tim->nama }}</li>
     </ul>
 
     <p style="text-align: center; font-weight: bold">Sertifikat Vaksin</p>
