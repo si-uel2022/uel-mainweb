@@ -17,6 +17,7 @@ use App\Mail\EmailAccept;
 use App\Mail\EmailAcceptBA;
 use App\Mail\EmailReject;
 use App\Mail\EmailRejectBA;
+
 class AdminController extends Controller
 {
     /**
@@ -188,7 +189,7 @@ class AdminController extends Controller
         $tim->status = "Accepted";
         $nama = $tim->nama;
         $tim->save();
-        
+        Mail::to($tim->email)->send(new EmailAccept($tim->nama));
         return redirect()->route('admin.showML')->with('status_accept', 'Accept ' . $nama);
     }
 
@@ -197,6 +198,7 @@ class AdminController extends Controller
         $tim->status = "Rejected";
         $nama = $tim->nama;
         $tim->save();
+        Mail::to($tim->email)->send(new EmailReject($tim->nama));
         return redirect()->route('admin.showML')->with('status_reject', 'Reject ' . $nama);
     }
 
@@ -205,6 +207,7 @@ class AdminController extends Controller
         $tim->status = "Accepted";
         $nama = $tim->nama;
         $tim->save();
+        Mail::to($tim->email)->send(new EmailAccept($tim->nama));
         return redirect()->route('admin.showPUBG')->with('status_accept', 'Accept ' . $nama);
     }
 
@@ -213,6 +216,7 @@ class AdminController extends Controller
         $tim->status = "Rejected";
         $nama = $tim->nama;
         $tim->save();
+        Mail::to($tim->email)->send(new EmailReject($tim->nama));
         return redirect()->route('admin.showPUBG')->with('status_reject', 'Reject ' . $nama);
     }
 
@@ -221,6 +225,7 @@ class AdminController extends Controller
         $tim->status = "Accepted";
         $nama = $tim->nama;
         $tim->save();
+        Mail::to($tim->email)->send(new EmailAccept($tim->nama));
         return redirect()->route('admin.showValorant')->with('status_accept', 'Accept ' . $nama);
     }
 
@@ -229,6 +234,7 @@ class AdminController extends Controller
         $tim->status = "Rejected";
         $nama = $tim->nama;
         $tim->save();
+        Mail::to($tim->email)->send(new EmailReject($tim->nama));
         return redirect()->route('admin.showValorant')->with('status_reject', 'Reject ' . $nama);
     }
 

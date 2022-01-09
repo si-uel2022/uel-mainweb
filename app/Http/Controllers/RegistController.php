@@ -309,6 +309,7 @@ class RegistController extends Controller
         $ba->nrp = $request->get('txtNRPBA');
         $ba->email = $request->get('txtEmailBA');
         $ba->line = $request->get('txtIDLineBA');
+        $ba->whatsapp = $request->get('txtNoWABA');
         $ba->instagram = $request->get('txtIGBA');
         $ba->tentang_uel = $request->get('txtPertanyaan1BA');
         $ba->komitmen = $request->get('txtPertanyaan2BA');
