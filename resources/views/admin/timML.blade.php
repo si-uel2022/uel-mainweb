@@ -31,8 +31,8 @@
             <td>{{ $p->id_line }}</td>
             <td>{{ $p->nomor }}</td>
             <td>{{ $p->instagram }}</td>
-            <td>{{ $p->sebagai }}</td>
             <td>{{ $p->domisili }}</td>
+            <td>{{ $p->sebagai }}</td>
             <td>
                 <a href="#modal_player" class="btn btn-primary" data-toggle="modal" onclick="getData({{ $p->id }});">
                     Detail Player

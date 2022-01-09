@@ -310,4 +310,13 @@ class AdminController extends Controller
         $filepath = public_path($path);
         return Response()->download($filepath);
     }
+
+    public function downloadBA(BA $ba)
+    {
+        $nama = $ba->foto;
+        $path = 'ba/file_foto/'.$nama;
+   
+        $filepath = public_path($path);
+        return Response()->download($filepath);
+    }
 }

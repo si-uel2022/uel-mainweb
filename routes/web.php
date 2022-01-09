@@ -75,4 +75,5 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/showBA/', [App\Http\Controllers\AdminController::class, 'showBA'])->name('admin.showBA');
     Route::post('admin/detailBA/', [App\Http\Controllers\AdminController::class, 'detailBA'])->name('admin.showDetailBA');
     Route::get('admin/downloadPorto/{ba}', [App\Http\Controllers\AdminController::class, 'downloadPorto'])->name('admin.downloadPorto');
+    Route::get('admin/downloadBA/{ba}', [App\Http\Controllers\AdminController::class, 'downloadBA'])->name('admin.downloadBA');
 });
