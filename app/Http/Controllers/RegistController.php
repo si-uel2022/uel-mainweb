@@ -30,6 +30,7 @@ class RegistController extends Controller
         $tim_ml = new Tim_ML();
         $tim_ml->nama = $request->txtNamaTim;
         $tim_ml->status = "Proses";
+        $tim_ml->email = $request->get("txtEmailOfficial");
 
         $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
             $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
@@ -114,7 +115,8 @@ class RegistController extends Controller
         $official->ktm = $namaFileKTM;
         $official->save();
 
-        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
+        Mail::to($request->get('txtEmailOfficial'))->send(new EmailSubmit($request->get('txtNamaTim')));
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
     }
 
     public function submitPUBG(Request $request)
@@ -122,7 +124,7 @@ class RegistController extends Controller
         $tim_pubg = new Tim_PUBG();
         $tim_pubg->nama = $request->txtNamaTim;
         $tim_pubg->status = "Proses";
-
+        $tim_pubg->email = $request->get("txtEmailOfficial");
         $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
             $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
             $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
@@ -205,7 +207,8 @@ class RegistController extends Controller
         $official->ktm = $namaFileKTM;
         $official->save();
 
-        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
+        Mail::to($request->get('txtEmailOfficial'))->send(new EmailSubmit($request->get('txtNamaTim')));
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
     }
 
     public function submitValorant(Request $request)
@@ -213,7 +216,7 @@ class RegistController extends Controller
         $tim_valorant = new Tim_Valorant();
         $tim_valorant->nama = $request->txtNamaTim;
         $tim_valorant->status = "Proses";
-
+        $tim_valorant->email = $request->get("txtEmailOfficial");
         $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
             $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
             $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
@@ -294,7 +297,8 @@ class RegistController extends Controller
         $official->ktm = $namaFileKTM;
         $official->save();
 
-        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
+        Mail::to($request->get('txtEmailOfficial'))->send(new EmailSubmit($request->get('txtNamaTim')));
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
     }
 
     public function submitBA(Request $request)
@@ -326,6 +330,6 @@ class RegistController extends Controller
 
         $ba->save();
         Mail::to($request->get('txtEmailBA'))->send(new EmailSubmitBA($request->get('txtNamaBA')));
-        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
     }
 }

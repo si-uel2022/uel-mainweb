@@ -3,9 +3,9 @@
 
 <p>Terima kasih telah mendaftar di UEL 2022 sebagai Official & Player, {{$user_tim}}!</p>
 
-<p>Data dari tim {{$user_tim}} telah diterima dan akan diproses oleh panitia.</p>
+<p>Data Anda telah diproses oleh panitia dan statusnya dinyatakan REJECTED.</p>
 
-<p>Mohon menunggu untuk konfirmasi selanjutnya dari panitia! Terima kasih.</p>
+<p>Mohon menunggu informasi selanjutnya dari pihak panitia. Terima kasih!</p>
 
 <b>CP Registrasi UEL 2022:</b><br>
 <b>line : oliviafrnsisca</b><br>

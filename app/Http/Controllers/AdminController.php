@@ -12,7 +12,11 @@ use App\Models\Tim_Valorant;
 use Illuminate\Http\Request;
 use ZipArchive;
 use File;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailAccept;
+use App\Mail\EmailAcceptBA;
+use App\Mail\EmailReject;
+use App\Mail\EmailRejectBA;
 class AdminController extends Controller
 {
     /**
@@ -184,6 +188,7 @@ class AdminController extends Controller
         $tim->status = "Accepted";
         $nama = $tim->nama;
         $tim->save();
+        
         return redirect()->route('admin.showML')->with('status_accept', 'Accept ' . $nama);
     }
 

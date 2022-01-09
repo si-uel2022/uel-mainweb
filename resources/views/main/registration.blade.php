@@ -402,6 +402,12 @@
                         <input type="text" name="txtDomisiliOfficial" class="textbox form-control"> 
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>Email</h3>
+                        <input type="text" name="txtEmailOfficial" class="textbox form-control"> 
+                    </div>
+                </div>
                 
                 <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
@@ -648,6 +654,12 @@
                     <div class="col-sm">
                         <h3>Domisili</h3>
                         <input type="text" name="txtDomisiliOfficial" class="textbox form-control"> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <h3>Email</h3>
+                            <input type="text" name="txtEmailOfficial" class="textbox form-control"> 
+                        </div>
                     </div>
                 </div>
                 
@@ -900,6 +912,12 @@
                     <div class="col-sm">
                         <h3>Domisili</h3>
                         <input type="text" name="txtDomisiliOfficial" class="textbox form-control"> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <h3>Email</h3>
+                            <input type="text" name="txtEmailOfficial" class="textbox form-control"> 
+                        </div>
                     </div>
                 </div>
                 
