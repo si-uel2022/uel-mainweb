@@ -243,7 +243,7 @@ class AdminController extends Controller
         $ba->status = "Accepted";
         $nama = $ba->nama;
         $ba->save();
-        Mail::to($ba->email)->send(new EmailAccept($ba->nama));
+        Mail::to($ba->email)->send(new EmailAcceptBA($ba->nama));
         return redirect()->route('admin.showBA')->with('status_accept', 'Accept ' . $nama);
     }
 
@@ -252,7 +252,7 @@ class AdminController extends Controller
         $ba->status = "Rejected";
         $nama = $ba->nama;
         $ba->save();
-        Mail::to($ba->email)->send(new EmailReject($ba->nama));
+        Mail::to($ba->email)->send(new EmailRejectBA($ba->nama));
         return redirect()->route('admin.showBA')->with('status_reject', 'Reject ' . $nama);
     }
 
