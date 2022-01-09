@@ -1,7 +1,16 @@
 @extends("main.layout")
 
 @section("content")
-
+<br><br>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@elseif (session('error'))
+    <div class="alert alert-danger">
+        {{session('error')}}    
+    </div>    
+@endif
 <h1 class="text-center">Registration</h1>
 <br><br><br>
 <div class="row text-center">
@@ -18,6 +27,7 @@
         <button type="button" class="nav-btn" id="btn-ba">Brand Ambassador</button>
     </div>
 </div>
+
 <br><br><br><br><br>
 
 <div class="div" id="div-ba">

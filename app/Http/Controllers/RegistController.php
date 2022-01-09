@@ -79,7 +79,7 @@ class RegistController extends Controller
             
         }
 
-        return back();
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
     }
 
     public function submitPUBG(Request $request)
@@ -138,7 +138,7 @@ class RegistController extends Controller
             
         }
 
-        return back();
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
     }
 
     public function submitValorant(Request $request)
@@ -196,6 +196,6 @@ class RegistController extends Controller
             
         }
 
-        return back();
+        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
     }
 }
