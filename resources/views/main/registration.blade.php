@@ -406,11 +406,15 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
                     </div>
                 </div>
             </section>
@@ -892,6 +896,10 @@
                         <h3>Upload sertifikat vaksin</h3>
                 <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
                     </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control">
+                    </div>
                 </div>
 
                 <br><br>
@@ -978,15 +986,15 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                    <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
                         <h3>Upload KTM</h3>
-                    <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
                     </div>
                 </div>
             </section>

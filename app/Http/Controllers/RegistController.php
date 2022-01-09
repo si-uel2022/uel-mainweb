@@ -71,12 +71,42 @@ class RegistController extends Controller
             $player->ktm = $namaFileKTM;
             $player->save();
 
-
             $riwayat = new Riwayat_ML();
             $riwayat->keterangan = $request->get("txtRiwayatPlayer".$i);
             $riwayat->id_player = $player->id;
             $riwayat->save();
             
+
+            //Official
+            $official = new ML();
+            $official->nama = $request->get("txtNamaOfficial");
+            $official->fakultas = $request->get("selFakultasOfficial");
+            $official->nrp = $request->get("txtNRPOfficial");
+            $official->angkatan = $request->get("txtAngkatanOfficial");
+
+            $official->id_line = $request->get("txtIDLineOfficial");
+            $official->nomor = $request->get("txtNoHPOfficial");
+            $official->instagram = $request->get("txtIGOfficial");
+            $official->sebagai = $request->get("txtSebagaiOfficial");
+            $official->domisili = $request->get("txtDomisiliOfficial");
+            $official->id_tim = $tim_ml->id;
+            $official->id_fakultas = 1;
+
+            $fotoExt = $request->file('inpFotoOfficial')->getClientOriginalExtension();
+            $namaFileFoto = 'UEL2022_Foto_Official_'.$request->get("txtNamaOfficial").".".$fotoExt;
+            $path = $request->file('inpFotoOfficial')->move('file_foto/'.$request->get("txtNamaTim")."/", $namaFileFoto);
+            $official->foto = $namaFileFoto;
+
+            $vaksinExt = $request->file('inpVaksinOfficial')->getClientOriginalExtension();
+            $namaFileVaksin = 'UEL2022_Vaksin_Official_'.$request->get("txtNamaOfficial").".".$vaksinExt;
+            $path = $request->file('inpVaksinOfficial')->move('file_vaksin/'.$request->get("txtNamaTim")."/", $namaFileVaksin);
+            $official->vaksin = $namaFileVaksin;
+
+            $ktmExt = $request->file('inpKTMOfficial')->getClientOriginalExtension();
+            $namaFileKTM = 'UEL2022_KTM_Official_'.$request->get("txtNamaOfficial").".".$ktmExt;
+            $path = $request->file('inpKTMOfficial')->move('file_ktm/'.$request->get("txtNamaTim")."/", $namaFileKTM);
+            $official->ktm = $namaFileKTM;
+            $official->save();
         }
 
         return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam');
@@ -91,8 +121,8 @@ class RegistController extends Controller
         $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
             $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
             $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
-            $tim_ml->logo = $namaFileLogo;
-        $tim_ml->save();
+            $tim_pubg->logo = $namaFileLogo;
+        $tim_pubg->save();
 
         for ($i=1; $i <= 1; $i++) { 
             $player = new PUBG();
@@ -111,22 +141,22 @@ class RegistController extends Controller
             $player->device = $request->get("txtDevicePlayer".$i);
             $player->sebagai = $request->get("txtSebagaiPlayer".$i);
             $player->domisili = $request->get("txtDomisiliPlayer".$i);
-            $player->id_tim = $tim_ml->id;
+            $player->id_tim = $tim_pubg->id;
             $player->id_fakultas = 1;
             
             $fotoExt = $request->file('inpFotoPlayer'.$i)->getClientOriginalExtension();
             $namaFileFoto = 'UEL2022_Foto_'.$request->get("txtNamaPlayer".$i).".".$fotoExt;
-            $path = $request->file('inpFotoPlayer'.$i)->move('file_foto', $namaFileFoto);
+            $path = $request->file('inpFotoPlayer'.$i)->move('file_foto/'.$request->get("txtNamaTim")."/", $namaFileFoto);
             $player->foto = $namaFileFoto;
 
             $vaksinExt = $request->file('inpVaksinPlayer'.$i)->getClientOriginalExtension();
             $namaFileVaksin = 'UEL2022_Vaksin_'.$request->get("txtNamaPlayer".$i).".".$vaksinExt;
-            $path = $request->file('inpVaksinPlayer'.$i)->move('file_vaksin', $namaFileVaksin);
+            $path = $request->file('inpVaksinPlayer'.$i)->move('file_vaksin/'.$request->get("txtNamaTim")."/", $namaFileVaksin);
             $player->vaksin = $namaFileVaksin;
 
             $ktmExt = $request->file('inpKTMPlayer'.$i)->getClientOriginalExtension();
             $namaFileKTM = 'UEL2022_KTM_'.$request->get("txtNamaPlayer".$i).".".$ktmExt;
-            $path = $request->file('inpKTMPlayer'.$i)->move('file_ktm', $namaFileKTM);
+            $path = $request->file('inpKTMPlayer'.$i)->move('file_ktm/'.$request->get("txtNamaTim")."/", $namaFileKTM);
             $player->ktm = $namaFileKTM;
             $player->save();
             

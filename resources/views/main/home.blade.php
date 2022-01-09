@@ -7,8 +7,9 @@
         <div class="jumbotron">
             <h1 class="display-4 jumbotron-text">UBAYA E-Sport League Season 2</h1>
             <p class="jumbotron-text-small">
-                UBAYA E-Sport League (UEL) adalah kompetisi e-sport yang diadakan setiap tahun. Pada tahun ini, UEL menginjak season kedua dengan tema ...
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore velit laudantium minus accusantium dolorem dolor consequatur error ad. Dicta at aliquam quae qui alias maxime officiis temporibus corporis sint itaque.
+                UBAYA E-Sport League (UEL) adalah kompetisi e-sport yang diadakan setiap tahun. Pada tahun ini, UEL menginjak season kedua dengan tema Strive to Thrive. <br>
+                UEL 2022 membuka kompetisi pada cabang Mobile Legends, PUBG Mobile dan Valorant. Tunggu apa lagi? Segera daftar dan ikuti keseruan UEL! <br>
+                UEL 2022? Survive is good, thrive is better!
             </p>
         </div>
     </div>
@@ -18,46 +19,21 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-6">
-        <div id="vector1">
-            <img src="{{asset("images/vector1.png")}}" alt="">
-        </div>
-    </div>
-    <div class="col-sm-6">
-
-    </div>
-    
-</div>
-<br>
-<div class="row">
-    <div class="col-sm-2">
-
-    </div>
-    <div class="col-sm-8">
-        <div id="vector2">
-            <img src="{{asset("images/vector2.png")}}" alt="">
-        </div>
-    </div>
-    <div class="col-sm-2">
-
-    </div>
-</div>
 
 <div class="row">
     <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-        <div class="carousel slide" data-ride="carousel" id="carouselControl" style="border: 10px solid #A4FFFD; box-sizing: border-box;
-        border-radius: 50px;">
+    <div class="col-sm-8 text-center">
+        <h1 class="display-4 jumbotron-text">Throwback UEL Season 1</h1>
+        <div class="carousel slide" data-ride="carousel" id="carouselControl" style="border: 5px solid #A4FFFD; box-sizing: border-box;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://picsum.photos/250" alt="1" class="d-block w-100">
+                    <img src="{{asset('images/fotouel21_1.png')}}" alt="1" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/200" alt="2" class="d-block w-100">
+                    <img src="{{asset('images/fotouel21_2.png')}}" alt="2" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/300" alt="3" class="d-block w-100">
+                    <img src="{{asset('images/fotouel21_3.png')}}" alt="3" class="d-block w-100">
                 </div>
             </div>
             <a href="#carouselControl" role="button" class="carousel-control-prev" data-slide="prev">

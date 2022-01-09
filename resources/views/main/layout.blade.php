@@ -34,7 +34,7 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    {{-- <li class="nav-item active">
                         <a href="/aboutus" class="nav-text">
                             About Us
                         </a>
@@ -43,7 +43,7 @@
                         <a href="/faq" class="nav-text">
                             FAQ
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
     
                 <a href="/registration"><button class="nav-btn">Register Team</button></a>
