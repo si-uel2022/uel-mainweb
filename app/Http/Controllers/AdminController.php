@@ -305,7 +305,7 @@ class AdminController extends Controller
     public function downloadPorto(BA $ba)
     {
         $nama = $ba->portofolio;
-        $path = 'coba/'.$nama;
+        $path = 'ba/file_portofolio/'.$nama;
 
         $filepath = public_path($path);
         return Response()->download($filepath);

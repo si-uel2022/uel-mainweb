@@ -42,6 +42,7 @@ Route::get('/registration', [App\Http\Controllers\RegistController::class, 'show
 Route::post('/registration/submitML', [App\Http\Controllers\RegistController::class, 'submitML'])->name('registration/submitML');
 Route::post('/registration/submitPUBG', [App\Http\Controllers\RegistController::class, 'submitPUBG'])->name('registration/submitPUBG');
 Route::post('/registration/submitValorant', [App\Http\Controllers\RegistController::class, 'submitValorant'])->name('registration/submitValorant');
+Route::post('/registration/submitBA', [App\Http\Controllers\RegistController::class, 'submitBA'])->name('registration/submitBA');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');

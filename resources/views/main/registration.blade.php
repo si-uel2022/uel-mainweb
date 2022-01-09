@@ -33,7 +33,7 @@
 <div class="div" id="div-ba">
     <h2>Brand Ambassador</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('registration/submitBA')}}" enctype="multipart/form-data" method="POST">
     @csrf
     
     <div class="row text-center">
@@ -103,7 +103,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Komitmen bila diterima menjadi BA UEL 2022?</h3>
-                        <input type="text" name="txtPertanyaan1BA" class="textbox form-control"> 
+                        <input type="text" name="txtPertanyaan2BA" class="textbox form-control"> 
                     </div>
                 </div>
                 <br><br>
@@ -116,7 +116,11 @@
                     </div>
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                <input type="file" name="inpFotoBA" class="textbox form-control">
+                    <input type="file" name="inpFotoBA" class="textbox form-control">
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMBA" class="textbox form-control">
                     </div>
                 </div>
             </section>
@@ -399,7 +403,7 @@
                     </div>
                 </div>
                 
-                <input type="hidden" name="txtSebagaiOfficial" value="Player" class="textbox form-control">
+                <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
 
@@ -437,47 +441,7 @@
 
     
 
-    <div class="modal fade" id="guidelineFotoModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Guideline Foto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">   
-                    <ol>
-                        <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
-                        </li>
-                        <li>Foto memiliki kualitas HD
-                        </li>
-                        <li>Player mengumpulkan foto dengan 3 pose berbeda yang terdiri dari:
-                            <ul>
-                                <li>1 gaya melipat tangan (WAJIB)
-                                </li>
-                                <li>2 gaya bebas yang sudah disepakati oleh masing-masing tim
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Menggunakan pakaian berkerah dengan warna senada untuk setiap tim</li>
-                        <li>Pastikan foto dalam kondisi terang
-                        </li>
-                        <li>Foto wajib dikumpulkan dengan format nama: Nama Tim_Nama
-                        </li>
-                    </ol>
-
-                    <p style="text-align: center">Contoh foto :</p>
-                    <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Tutup
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 <div class="div" id="div-valorant">
@@ -721,47 +685,7 @@
 
     
 
-    <div class="modal fade" id="guidelineFotoModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Guideline Foto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">   
-                    <ol>
-                        <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
-                        </li>
-                        <li>Foto memiliki kualitas HD
-                        </li>
-                        <li>Player mengumpulkan foto dengan 3 pose berbeda yang terdiri dari:
-                            <ul>
-                                <li>1 gaya melipat tangan (WAJIB)
-                                </li>
-                                <li>2 gaya bebas yang sudah disepakati oleh masing-masing tim
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Menggunakan pakaian berkerah dengan warna senada untuk setiap tim</li>
-                        <li>Pastikan foto dalam kondisi terang
-                        </li>
-                        <li>Foto wajib dikumpulkan dengan format nama: Nama Tim_Nama
-                        </li>
-                    </ol>
-
-                    <p style="text-align: center">Contoh foto :</p>
-                    <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Tutup
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 <div class="div" id="div-pubg">
@@ -1014,47 +938,45 @@
     </div>
     
     </form>
+</div>
 
-    
+<div class="modal fade" id="guidelineFotoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Guideline Foto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">   
+                <ol>
+                    <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
+                    </li>
+                    <li>Foto memiliki kualitas HD
+                    </li>
+                    <li>Player mengumpulkan foto dengan 3 pose berbeda yang terdiri dari:
+                        <ul>
+                            <li>1 gaya melipat tangan (WAJIB)
+                            </li>
+                            <li>2 gaya bebas yang sudah disepakati oleh masing-masing tim
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Menggunakan pakaian berkerah dengan warna senada untuk setiap tim</li>
+                    <li>Pastikan foto dalam kondisi terang
+                    </li>
+                    <li>Foto wajib dikumpulkan dengan format nama: Nama Tim_Nama
+                    </li>
+                </ol>
 
-    <div class="modal fade" id="guidelineFotoModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Guideline Foto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">   
-                    <ol>
-                        <li>Foto merupakan foto setengah badan atau sepinggang dengan background polos
-                        </li>
-                        <li>Foto memiliki kualitas HD
-                        </li>
-                        <li>Player mengumpulkan foto dengan 3 pose berbeda yang terdiri dari:
-                            <ul>
-                                <li>1 gaya melipat tangan (WAJIB)
-                                </li>
-                                <li>2 gaya bebas yang sudah disepakati oleh masing-masing tim
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Menggunakan pakaian berkerah dengan warna senada untuk setiap tim</li>
-                        <li>Pastikan foto dalam kondisi terang
-                        </li>
-                        <li>Foto wajib dikumpulkan dengan format nama: Nama Tim_Nama
-                        </li>
-                    </ol>
-
-                    <p style="text-align: center">Contoh foto :</p>
-                    <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Tutup
-                    </button>
-                </div>
+                <p style="text-align: center">Contoh foto :</p>
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset("images/contoh_foto.png")}}" alt="Contoh Foto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Tutup
+                </button>
             </div>
         </div>
     </div>
