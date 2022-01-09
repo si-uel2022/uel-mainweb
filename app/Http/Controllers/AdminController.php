@@ -10,6 +10,8 @@ use App\Models\Tim_ML;
 use App\Models\Tim_PUBG;
 use App\Models\Tim_Valorant;
 use Illuminate\Http\Request;
+use ZipArchive;
+use File;
 
 class AdminController extends Controller
 {
@@ -117,7 +119,7 @@ class AdminController extends Controller
     {
         $tim = Tim_ML::find($id);
         $player = $tim->players;
-        return view('admin.timML', compact('player'));
+        return view('admin.timML', compact('player', 'tim'));
     }
 
     public function showPlayerPUBG($id)
@@ -138,9 +140,10 @@ class AdminController extends Controller
     {
         $id = $request->id;
         $player = ML::find($id);
+        $tim = Tim_ML::find($player->id_tim);
 
         return response()->json(array(
-            'msg' => view('admin.detailModalML', compact('player'))->render()
+            'msg' => view('admin.detailModalML', compact('player', 'tim'))->render()
         ),200);
     }
 
@@ -220,5 +223,30 @@ class AdminController extends Controller
         $nama = $tim->nama;
         $tim->save();
         return redirect()->route('admin.showValorant')->with('status_reject', 'Reject ' . $nama);
+    }
+
+    public function downloadML(Tim_ML $tim)
+    {
+        $nama = $tim->nama;
+
+        $zip = new ZipArchive;
+   
+        $fileName = $nama.'.zip';
+
+        $path = 'file_foto/'.$nama;
+   
+        if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        {
+            $files = File::files(public_path($path));
+   
+            foreach ($files as $key => $value) {
+                $relativeNameInZipFile = basename($value);
+                $zip->addFile($value, $relativeNameInZipFile);
+            }
+             
+            $zip->close();
+        }
+    
+        return response()->download(public_path($fileName));
     }
 }

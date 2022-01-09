@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('admin/detailPlayerML/', [App\Http\Controllers\AdminController::class, 'detailPlayerML'])->name('admin.showDetailML');
     Route::get('admin/acceptTimML/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimML'])->name('admin.acceptTimML');
     Route::get('admin/rejectTimML/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimML'])->name('admin.rejectTimML');
+    Route::get('admin/downloadML/{tim}', [App\Http\Controllers\AdminController::class, 'downloadML'])->name('admin.downloadML');
 
     //PUBG
     Route::get('admin/showPUBG/', [App\Http\Controllers\AdminController::class, 'showPUBG'])->name('admin.showPUBG');
