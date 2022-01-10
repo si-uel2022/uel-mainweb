@@ -108,7 +108,8 @@
                 </div>
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload portfolio</h3>
@@ -267,7 +268,8 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -369,7 +371,8 @@
                 <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -521,7 +524,8 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -623,15 +627,20 @@
                 <input type="hidden" name="txtSebagaiOfficial" value="Player" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
                     </div>
                 </div>
             </section>
@@ -779,7 +788,8 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -881,7 +891,8 @@
                 <input type="hidden" name="txtSebagaiOfficial" value="Player" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-
+                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>

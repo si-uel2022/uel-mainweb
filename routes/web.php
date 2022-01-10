@@ -33,6 +33,10 @@ Route::get('/faq', function () {
 Route::get('/registration', function () {
     return view('main.registration');
 });
+
+Route::get('/alur', function () {
+    return view('main.alur');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
