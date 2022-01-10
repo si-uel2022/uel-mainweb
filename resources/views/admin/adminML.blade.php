@@ -26,6 +26,7 @@
             <th>Status</th>
             <th>List Player</th>
             <th>Foto Player</th>
+            <th>Logo Tim</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -37,6 +38,7 @@
                 <td>{{ $t->status }}</td>
                 <td> <a href="{{ route('admin.showPlayerML',$t->id) }}" class="btn btn-primary">Show</a> </td>
                 <td> <a href="{{ url('admin/downloadML/' . $t->id) }}" class="btn btn-primary">Download <i class="fa fa-download"></i></a> </td>
+                <td> <a href="{{ url('admin/downloadLogoML/' . $t->id) }}" class="btn btn-primary">Download <i class="fa fa-download"></i></a> </td>
                 <td> 
                     <a href="{{ url('admin/acceptTimML/' . $t->id) }}" class="btn btn-info">Accept <i class="fa fa-check"></i></a>
                     <a href="{{ url('admin/rejectTimML/' . $t->id) }}" class="btn btn-danger">Reject <i class="fa fa-close"></i></a> 

@@ -352,4 +352,31 @@ class AdminController extends Controller
         $filepath = public_path($path);
         return Response()->download($filepath);
     }
+
+    public function downloadLogoML(Tim_ML $tim)
+    {
+        $nama = $tim->logo;
+        $path = 'file_logo/'.$nama;
+   
+        $filepath = public_path($path);
+        return Response()->download($filepath);
+    }
+
+    public function downloadLogoPUBG(Tim_PUBG $tim)
+    {
+        $nama = $tim->logo;
+        $path = 'file_logo/'.$nama;
+   
+        $filepath = public_path($path);
+        return Response()->download($filepath);
+    }
+    
+    public function downloadLogoValorant(Tim_Valorant $tim)
+    {
+        $nama = $tim->logo;
+        $path = 'file_logo/'.$nama;
+   
+        $filepath = public_path($path);
+        return Response()->download($filepath);
+    }
 }

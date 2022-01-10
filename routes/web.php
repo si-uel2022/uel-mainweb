@@ -54,6 +54,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/acceptTimML/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimML'])->name('admin.acceptTimML');
     Route::get('admin/rejectTimML/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimML'])->name('admin.rejectTimML');
     Route::get('admin/downloadML/{tim}', [App\Http\Controllers\AdminController::class, 'downloadML'])->name('admin.downloadML');
+    Route::get('admin/downloadLogoML/{tim}', [App\Http\Controllers\AdminController::class, 'downloadLogoML'])->name('admin.downloadLogoML');
 
     //PUBG
     Route::get('admin/showPUBG/', [App\Http\Controllers\AdminController::class, 'showPUBG'])->name('admin.showPUBG');
@@ -62,6 +63,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/acceptTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimPUBG'])->name('admin.acceptTimPUBG');
     Route::get('admin/rejectTimPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimPUBG'])->name('admin.rejectTimPUBG');
     Route::get('admin/downloadPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'downloadPUBG'])->name('admin.downloadPUBG');
+    Route::get('admin/downloadLogoPUBG/{tim}', [App\Http\Controllers\AdminController::class, 'downloadLogoPUBG'])->name('admin.downloadLogoPUBG');
 
     //Valorant
     Route::get('admin/showValorant/', [App\Http\Controllers\AdminController::class, 'showValorant'])->name('admin.showValorant');
@@ -70,6 +72,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/acceptTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'acceptTimValorant'])->name('admin.acceptTimValorant');
     Route::get('admin/rejectTimValorant/{tim}', [App\Http\Controllers\AdminController::class, 'rejectTimValorant'])->name('admin.rejectTimValorant');
     Route::get('admin/downloadValorant/{tim}', [App\Http\Controllers\AdminController::class, 'downloadValorant'])->name('admin.downloadValorant');
+    Route::get('admin/downloadLogoValorant/{tim}', [App\Http\Controllers\AdminController::class, 'downloadLogoValorant'])->name('admin.downloadLogoValorant');
 
     //Brand Ambassador
     Route::get('admin/showBA/', [App\Http\Controllers\AdminController::class, 'showBA'])->name('admin.showBA');
