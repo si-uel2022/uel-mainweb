@@ -17,6 +17,7 @@ use App\Mail\EmailAccept;
 use App\Mail\EmailAcceptBA;
 use App\Mail\EmailReject;
 use App\Mail\EmailRejectBA;
+use App\Models\Riwayat_ML;
 
 class AdminController extends Controller
 {
@@ -146,9 +147,10 @@ class AdminController extends Controller
         $id = $request->id;
         $player = ML::find($id);
         $tim = Tim_ML::find($player->id_tim);
+        $riwayat = $player->riwayat;
 
         return response()->json(array(
-            'msg' => view('admin.detailModalML', compact('player', 'tim'))->render()
+            'msg' => view('admin.detailModalML', compact('player', 'tim', 'riwayat'))->render()
         ),200);
     }
 
@@ -157,9 +159,10 @@ class AdminController extends Controller
         $id = $request->id;
         $player = PUBG::find($id);
         $tim = Tim_PUBG::find($player->id_tim);
+        $riwayat = $player->riwayat;
 
         return response()->json(array(
-            'msg' => view('admin.detailModalPUBG', compact('player', 'tim'))->render()
+            'msg' => view('admin.detailModalPUBG', compact('player', 'tim', 'riwayat'))->render()
         ),200);
     }
 
@@ -168,9 +171,10 @@ class AdminController extends Controller
         $id = $request->id;
         $player = Valorant::find($id);
         $tim = Tim_Valorant::find($player->id_tim);
+        $riwayat = $player->riwayat;
 
         return response()->json(array(
-            'msg' => view('admin.detailModalValorant', compact('player', 'tim'))->render()
+            'msg' => view('admin.detailModalValorant', compact('player', 'tim', 'riwayat'))->render()
         ),200);
     }
 

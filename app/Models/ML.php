@@ -22,5 +22,10 @@ class ML extends Model
         return $this->belongsTo('App\Models\Fakultas', 'id_fakultas', 'id');
     }
 
+    public function riwayat()
+    {
+        return $this->hasMany('App\Models\Riwayat_ML', 'id_player', 'id');
+    }
+
     public $timestamps = false;
 }
