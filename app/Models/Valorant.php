@@ -22,4 +22,9 @@ class Valorant extends Model
     {
         return $this->belongsTo('App\Models\Fakultas', 'id_fakultas', 'id');
     }
+
+    public function riwayat()
+    {
+        return $this->hasMany('App\Models\Riwayat_Valorant', 'id_player', 'id');
+    }
 }

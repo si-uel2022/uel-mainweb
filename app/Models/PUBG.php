@@ -22,4 +22,9 @@ class PUBG extends Model
     {
         return $this->belongsTo('App\Models\Fakultas', 'id_fakultas', 'id');
     }
+
+    public function riwayat()
+    {
+        return $this->hasMany('App\Models\Riwayat_PUBG', 'id_player', 'id');
+    }
 }
