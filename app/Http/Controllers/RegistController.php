@@ -218,9 +218,9 @@ class RegistController extends Controller
         $tim_valorant->status = "Proses";
         $tim_valorant->email = $request->get("txtEmailOfficial");
         $logoExt = $request->file('inpLogoTeam')->getClientOriginalExtension();
-            $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
-            $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
-            $tim_valorant->logo = $namaFileLogo;
+        $namaFileLogo = 'UEL2022_Logo_'.$request->get("txtNamaTim").".".$logoExt;
+        $path = $request->file('inpLogoTeam')->move('file_logo', $namaFileLogo);
+        $tim_valorant->logo = $namaFileLogo;
         $tim_valorant->save();
 
         for ($i=1; $i <= 1; $i++) { 
