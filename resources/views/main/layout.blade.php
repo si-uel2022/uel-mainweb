@@ -40,6 +40,12 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                    <li class="nav-item active">
+                        <a href="/peraturan" class="selected-nav-text">
+                            Peraturan Brand Ambassador
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
                     {{-- <li class="nav-item active">
                         <a href="/aboutus" class="nav-text">
                             About Us

@@ -37,6 +37,10 @@ Route::get('/registration', function () {
 Route::get('/alur', function () {
     return view('main.alur');
 });
+
+Route::get('/peraturan', function () {
+    return view('main.peraturan');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
