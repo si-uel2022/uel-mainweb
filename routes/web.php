@@ -48,6 +48,7 @@ Route::get('/registration', [App\Http\Controllers\RegistController::class, 'show
 
 //submit data
 Route::post('/registration/submitML', [App\Http\Controllers\RegistController::class, 'submitML'])->name('registration/submitML');
+Route::post('/registration/tambahanML', [App\Http\Controllers\RegistController::class, 'tambahanML'])->name('registration/tambahanML');
 Route::post('/registration/submitPUBG', [App\Http\Controllers\RegistController::class, 'submitPUBG'])->name('registration/submitPUBG');
 Route::post('/registration/submitValorant', [App\Http\Controllers\RegistController::class, 'submitValorant'])->name('registration/submitValorant');
 Route::post('/registration/submitBA', [App\Http\Controllers\RegistController::class, 'submitBA'])->name('registration/submitBA');
