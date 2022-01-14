@@ -108,20 +108,20 @@
                 </div>
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg dan upload portfolio dalam bentuk .pdf|</h3>
                 <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload portfolio</h3>
-                    <input type="file" name="inpPortfolioBA" class="textbox form-control">
+                    <input type="file" name="inpPortfolioBA" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoBA" class="textbox form-control">
+                    <input type="file" name="inpFotoBA" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
-                        <h3>Upload KTM</h3>
-                    <input type="file" name="inpKTMBA" class="textbox form-control">
+                        <h3>Upload KTM/SS PROFIL MY UBAYA</h3>
+                    <input type="file" name="inpKTMBA" class="textbox form-control" required>
                     </div>
                 </div>
             </section>
@@ -180,7 +180,12 @@
         <div class="col-sm-6 text-center">
             <section>
                 
+                @if ($i == 6)
+                <h2>Player {{$i}} (Opsional)</h2>
+                @else
                 <h2>Player {{$i}}</h2>
+                @endif
+                
                 <br>
                 <h2 class="bolded">Data Umum</h2>
                 <div class="row">
@@ -219,7 +224,7 @@
                         <input type="text" name="txtIDLinePlayer{{$i}}" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
@@ -268,8 +273,9 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
+                @if ($i == 6)
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -284,6 +290,23 @@
                     <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
+                @else
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>Upload foto diri</h3>
+                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload sertifikat vaksin</h3>
+                    <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                </div>
+                @endif
+                
 
                 <br><br>
                 <h2 class="bolded">Riwayat Turnamen</h2>
@@ -320,7 +343,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Fakultas</h3>
-                        <select id="" name="selFakultasPlayerOfficial" class="textbox form-control">
+                        <select id="" name="selFakultasOfficial" class="textbox form-control">
                             @foreach ($fakultas as $f)
                             <option value="{{$f->nama}}">{{$f->nama}}</option>
                             @endforeach
@@ -347,7 +370,7 @@
                         <input type="text" name="txtIDLineOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPOfficial" class="textbox form-control">
                     </div>
                 </div>
@@ -371,20 +394,20 @@
                 <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload KTM</h3>
-                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control" required>
                     </div>
                 </div>
             </section>
@@ -444,7 +467,11 @@
         <div class="col-sm-6 text-center">
             <section>
                 
+                @if ($i == 6)
+                <h2>Player {{$i}} (Opsional)</h2>
+                @else
                 <h2>Player {{$i}}</h2>
+                @endif
                 <br>
                 <h2 class="bolded">Data Umum</h2>
                 <div class="row">
@@ -483,7 +510,7 @@
                         <input type="text" name="txtIDLinePlayer{{$i}}" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
@@ -524,8 +551,9 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
+                @if ($i == 6)
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -540,6 +568,22 @@
                     <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
+                @else
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>Upload foto diri</h3>
+                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload sertifikat vaksin</h3>
+                    <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                </div>
+                @endif
 
                 <br><br>
                 <h2 class="bolded">Riwayat Turnamen</h2>
@@ -576,7 +620,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Fakultas</h3>
-                        <select id="" name="selFakultasPlayerOfficial" class="textbox form-control">
+                        <select id="" name="selFakultasOfficial" class="textbox form-control">
                             @foreach ($fakultas as $f)
                             <option value="{{$f->nama}}">{{$f->nama}}</option>
                             @endforeach
@@ -603,7 +647,7 @@
                         <input type="text" name="txtIDLineOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPOfficial" class="textbox form-control">
                     </div>
                 </div>
@@ -624,23 +668,23 @@
                     </div>
                 </div>
                 
-                <input type="hidden" name="txtSebagaiOfficial" value="Player" class="textbox form-control">
+                <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload KTM</h3>
-                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control" required>
                     </div>
                 </div>
             </section>
@@ -700,7 +744,11 @@
         <div class="col-sm-6 text-center">
             <section>
                 
+                @if ($i == 5)
+                <h2>Player {{$i}} (Opsional)</h2>
+                @else
                 <h2>Player {{$i}}</h2>
+                @endif
                 <br>
                 <h2 class="bolded">Data Umum</h2>
                 <div class="row">
@@ -739,7 +787,7 @@
                         <input type="text" name="txtIDLinePlayer{{$i}}" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
@@ -788,8 +836,9 @@
 
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
+                @if ($i == 6)
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
@@ -797,13 +846,29 @@
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
+                    <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control">
                     </div>
                     <div class="col-sm">
                         <h3>Upload KTM</h3>
                     <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control">
                     </div>
                 </div>
+                @else
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>Upload foto diri</h3>
+                    <input type="file" name="inpFotoPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload sertifikat vaksin</h3>
+                    <input type="file" name="inpVaksinPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Upload KTM</h3>
+                    <input type="file" name="inpKTMPlayer{{$i}}" class="textbox form-control" required>
+                    </div>
+                </div>
+                @endif
 
                 <br><br>
                 <h2 class="bolded">Riwayat Turnamen</h2>
@@ -840,7 +905,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <h3>Fakultas</h3>
-                        <select id="" name="selFakultasPlayerOfficial" class="textbox form-control">
+                        <select id="" name="selFakultasOfficial" class="textbox form-control">
                             @foreach ($fakultas as $f)
                             <option value="{{$f->nama}}">{{$f->nama}}</option>
                             @endforeach
@@ -867,7 +932,7 @@
                         <input type="text" name="txtIDLineOfficial" class="textbox form-control">
                     </div>
                     <div class="col-sm">
-                        <h3>Nomor HP</h3>
+                        <h3>Nomor WA</h3>
                         <input type="text" name="txtNoHPOfficial" class="textbox form-control">
                     </div>
                 </div>
@@ -888,23 +953,23 @@
                     </div>
                 </div>
                 
-                <input type="hidden" name="txtSebagaiOfficial" value="Player" class="textbox form-control">
+                <input type="hidden" name="txtSebagaiOfficial" value="Official" class="textbox form-control">
                 <br><br>
                 <h2 class="bolded">Upload File</h2>
-                <h3>| Upload foto diri mohon dalam bentuk .zip yang berisikan foto-foto sesuai dengan ketentuan |</h3>
+                <h3>| Upload foto diri dan sertifikat vaksin mohon dalam bentuk .zip, upload KTM dalam bentuk .png/.jpg |</h3>
                 <br>
                 <div class="row">
                     <div class="col-sm">
                         <h3>Upload foto diri</h3>
-                    <input type="file" name="inpFotoOfficial" class="textbox form-control">
+                    <input type="file" name="inpFotoOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload sertifikat vaksin</h3>
-                    <input type="file" name="inpVaksinOfficial" class="textbox form-control">
+                    <input type="file" name="inpVaksinOfficial" class="textbox form-control" required>
                     </div>
                     <div class="col-sm">
                         <h3>Upload KTM</h3>
-                    <input type="file" name="inpKTMOfficial" class="textbox form-control">
+                    <input type="file" name="inpKTMOfficial" class="textbox form-control" required>
                     </div>
                 </div>
             </section>
