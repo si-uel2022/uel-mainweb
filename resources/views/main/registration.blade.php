@@ -33,7 +33,7 @@
 <div class="div" id="div-ba">
     <h2>Brand Ambassador</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitBA')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('registration/submitBA')}}" enctype="multipart/form-data" method="POST" class="form-input">
     @csrf
     
     <div class="row text-center">
@@ -137,7 +137,7 @@
     <div class="row text-center">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <button type="submit" class="nav-btn">Submit Data</button>
+            <button type="submit" class="nav-btn button-input">Submit Data</button>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -149,7 +149,7 @@
 <div class="div" id="div-ml">
     <h2>Mobile Legends</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('registration/submitML')}}" enctype="multipart/form-data" method="POST" class="form-input">
     @csrf
     
     <div class="row">
@@ -421,7 +421,7 @@
     <div class="row text-center">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <button type="submit" class="nav-btn">Submit Data</button>
+            <button type="submit" class="nav-btn button-input">Submit Data</button>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -436,7 +436,7 @@
 <div class="div" id="div-valorant">
     <h2>Valorant</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitValorant')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('registration/submitValorant')}}" enctype="multipart/form-data" method="POST" class="form-input">
     @csrf
     
     <div class="row">
@@ -698,7 +698,7 @@
     <div class="row text-center">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <button type="submit" class="nav-btn">Submit Data</button>
+            <button type="submit" class="nav-btn button-input">Submit Data</button>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -713,7 +713,7 @@
 <div class="div" id="div-pubg">
     <h2>PUBG Mobile</h2>
     <hr class="border border-primary"/>
-    <form action="{{route('registration/submitPUBG')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('registration/submitPUBG')}}" enctype="multipart/form-data" method="POST" class="form-input">
     @csrf
     
     <div class="row">
@@ -983,7 +983,7 @@
     <div class="row text-center">
         <div class="col-sm"></div>
         <div class="col-sm">
-            <button type="submit" class="nav-btn">Submit Data</button>
+            <button type="submit" class="nav-btn button-input">Submit Data</button>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -1099,6 +1099,10 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('.form-input').submit(function(){
+            $('.button-input').prop('disabled', true);
+        })
+
         $('#div-ml').hide();
         $('#div-valorant').hide();
         $('#div-pubg').hide();
