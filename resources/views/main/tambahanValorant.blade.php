@@ -19,9 +19,9 @@
     <div class="body-gradient">
 
         <div class="div" id="div-ml">
-            <h2 style="text-align: center">Tambahan Player Mobile Legends (Optional)</h2>
+            <h2 style="text-align: center">Tambahan Player Valorant (Optional)</h2>
             <hr class="border border-primary"/>
-            <form action="{{route('registration/tambahanML')}}" enctype="multipart/form-data" method="POST">
+            <form action="{{route('registration/tambahanValorant')}}" enctype="multipart/form-data" method="POST">
             @csrf
             
             <div class="row">
@@ -91,31 +91,25 @@
                                 <input type="text" name="txtNicknamePlayer" class="textbox form-control">
                             </div>
                             <div class="col-sm">
-                                <h3>ID Server</h3>
-                                <input type="text" name="txtIDServerPlayer" class="textbox form-control">
+                                <h3>Tagline</h3>
+                                <input type="text" name="txtTaglinePlayer" class="textbox form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm">
-                                <h3>Hero Favorit</h3>
-                                <input type="text" name="txtHeroPlayer" class="textbox form-control">
+                                <h3>Agent Favorit</h3>
+                                <input type="text" name="txtAgentPlayer" class="textbox form-control">
                             </div>
                             <div class="col-sm">
                                 <h3>Role</h3>
-                                <input type="text" name="txtRolePlayer" class="textbox form-control">
+                                <input type="text" name="txtHeroPlayer" class="textbox form-control">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm">
-                                <h3>Device</h3>
-                                <input type="text" name="txtDevicePlayer" class="textbox form-control">
-                            </div>
                            
                             <input type="hidden" name="txtSebagaiPlayer" value="Player" class="textbox form-control">
                             <input type="hidden" name="txtTim" value="{{ $tim }}" class="textbox form-control">
                             <input type="hidden" name="txtNamaTim" value="{{ $namaTim }}" class="textbox form-control">
                            
-                        </div>
         
                         <br><br>
                         <h2 class="bolded">Upload File</h2>

@@ -271,6 +271,8 @@ class RegistController extends Controller
 
     public function submitValorant(Request $request)
     {
+        $fakultas = Fakultas::get();
+
         $tim_valorant = new Tim_Valorant();
         $tim_valorant->nama = $request->txtNamaTim;
         $tim_valorant->status = "Proses";
@@ -281,7 +283,7 @@ class RegistController extends Controller
         $tim_valorant->logo = $namaFileLogo;
         $tim_valorant->save();
 
-        for ($i=1; $i <= 1; $i++) { 
+        for ($i=1; $i <= 5; $i++) { 
             $player = new Valorant();
             $player->nama = $request->get("txtNamaPlayer".$i);
             $player->fakultas = $request->get("selFakultasPlayer".$i);
@@ -355,8 +357,61 @@ class RegistController extends Controller
         $official->ktm = $namaFileKTM;
         $official->save();
 
+        $tim =  $tim_valorant->id;
+        $namaTim = $request->txtNamaTim;
+
         Mail::to($request->get('txtEmailOfficial'))->send(new EmailSubmit($request->get('txtNamaTim')));
-        return redirect()->back()->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
+        return view('main.tambahanValorant', compact('fakultas', 'tim', 'namaTim'));
+    }
+
+    public function tambahanValorant(Request $request)
+    {
+        if(!empty($request->get("txtNamaPlayer")))
+        {
+            $tim_id = $request->get("txtTim");
+
+            $player = new Valorant();
+            $player->nama = $request->get("txtNamaPlayer");
+            $player->fakultas = $request->get("selFakultasPlayer");
+            $player->nrp = $request->get("txtNRPPlayer");
+            $player->angkatan = $request->get("txtAngkatanPlayer");
+
+            $player->id_line = $request->get("txtIDLinePlayer");
+            $player->nomor = $request->get("txtNoHPPlayer");
+            $player->instagram = $request->get("txtIGPlayer");
+            $player->nickname = $request->get("txtNicknamePlayer");
+            $player->tagline = $request->get("txtIDTaglinePlayer");
+            $player->agent = $request->get("txtAgentPlayer");
+            $player->role = $request->get("txtRolePlayer");
+            $player->sebagai = $request->get("txtSebagaiPlayer");
+            $player->domisili = $request->get("txtDomisiliPlayer");
+            $player->id_tim = $tim_id->id;
+            $player->id_fakultas = 1;
+
+            $fotoExt = $request->file('inpFotoPlayer')->getClientOriginalExtension();
+            $namaFileFoto = 'UEL2022_Foto_' . $request->get("txtNamaPlayer") . "." . $fotoExt;
+            $path = $request->file('inpFotoPlayer')->move('file_foto/' . $request->get("txtNamaTim") . "/", $namaFileFoto);
+            $player->foto = $namaFileFoto;
+
+            $vaksinExt = $request->file('inpVaksinPlayer')->getClientOriginalExtension();
+            $namaFileVaksin = 'UEL2022_Vaksin_' . $request->get("txtNamaPlayer") . "." . $vaksinExt;
+            $path = $request->file('inpVaksinPlayer')->move('file_vaksin/' . $request->get("txtNamaTim") . "/", $namaFileVaksin);
+            $player->vaksin = $namaFileVaksin;
+
+            $ktmExt = $request->file('inpKTMPlayer')->getClientOriginalExtension();
+            $namaFileKTM = 'UEL2022_KTM_' . $request->get("txtNamaPlayer") . "." . $ktmExt;
+            $path = $request->file('inpKTMPlayer')->move('file_ktm/' . $request->get("txtNamaTim") . "/", $namaFileKTM);
+            $player->ktm = $namaFileKTM;
+            $player->save();
+
+
+            $riwayat = new Riwayat_Valorant();
+            $riwayat->keterangan = $request->get("txtRiwayatPlayer");
+            $riwayat->id_player = $player->id;
+            $riwayat->save();
+        }
+        
+        return redirect()->route('registration')->with('success', 'Registrasi berhasil. Email konfirmasi akan dikirim dalam waktu 1x24 jam. Apabila tidak mendapatkan email, mohon melakukan konfirmasi pada email si.uel2022@gmail.com');
     }
 
     public function submitBA(Request $request)
