@@ -52,6 +52,7 @@ Route::post('/registration/tambahanML', [App\Http\Controllers\RegistController::
 Route::post('/registration/submitPUBG', [App\Http\Controllers\RegistController::class, 'submitPUBG'])->name('registration/submitPUBG');
 Route::post('/registration/submitValorant', [App\Http\Controllers\RegistController::class, 'submitValorant'])->name('registration/submitValorant');
 Route::post('/registration/tambahanValorant', [App\Http\Controllers\RegistController::class, 'tambahanValorant'])->name('registration/tambahanValorant');
+Route::post('/registration/tambahanPUBG', [App\Http\Controllers\RegistController::class, 'tambahanPUBG'])->name('registration/tambahanPUBG');
 Route::post('/registration/submitBA', [App\Http\Controllers\RegistController::class, 'submitBA'])->name('registration/submitBA');
 
 Route::middleware(['auth'])->group(function(){

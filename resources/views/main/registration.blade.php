@@ -738,17 +738,15 @@
    
 
     
-    @for ($i = 1; $i < 6; $i++)
+    @for ($i = 1; $i < 5; $i++)
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6 text-center">
             <section>
                 
-                @if ($i == 5)
-                <h2>Player {{$i}} (Opsional)</h2>
-                @else
+               
                 <h2>Player {{$i}}</h2>
-                @endif
+               
                 <br>
                 <h2 class="bolded">Data Umum</h2>
                 <div class="row">
