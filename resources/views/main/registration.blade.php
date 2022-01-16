@@ -174,7 +174,7 @@
    
 
     
-    @for ($i = 1; $i < 7; $i++)
+    @for ($i = 1; $i < 6; $i++)
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6 text-center">
@@ -461,7 +461,7 @@
    
 
     
-    @for ($i = 1; $i < 7; $i++)
+    @for ($i = 1; $i < 6; $i++)
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6 text-center">
