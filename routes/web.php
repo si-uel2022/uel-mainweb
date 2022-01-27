@@ -93,3 +93,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('admin/downloadPorto/{ba}', [App\Http\Controllers\AdminController::class, 'downloadPorto'])->name('admin.downloadPorto');
     Route::get('admin/downloadBA/{ba}', [App\Http\Controllers\AdminController::class, 'downloadBA'])->name('admin.downloadBA');
 });
+
+//poin
+Route::get('/poin', [App\Http\Controllers\PoinController::class, 'index']);
+Route::get('/poin/{cabang}', [App\Http\Controllers\PoinController::class, 'bukaCabang']);
+Route::post('poin/updatepoin/', [App\Http\Controllers\PoinController::class, 'updatePoin'])->name('poin.updatepoin');
