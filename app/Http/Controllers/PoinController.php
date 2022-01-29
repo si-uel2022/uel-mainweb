@@ -163,6 +163,7 @@ class PoinController extends Controller
         //     ->where('week', '=', $week)
         //     ->where('day', '=', $day)
         //     ->get();
+
         $tim = Poin_PUBG::find($id);
         return response()->json(array(
             'status' => 'oke',
@@ -170,44 +171,25 @@ class PoinController extends Controller
         ),200);
     }
 
-    public function getDataFirst_ML(Request $request)
-    {
+    public function simpanPoin_PUBG(Request $request){
         $id = $request->id_tim;
+        $placementpoint = $request->placementpoint;
+        $killpoint = $request->killpoint;
+        $totalpoint = $request->totalpoint;
+        $wwcdpoint = $request->wwcdpoint;
+
+        $tim = DB::table('poin_pubg')
+                ->where('id', '=', $request->id_tim)
+                ->update([
+                    'placement_poin' => $placementpoint,
+                    'kill_poin' => $killpoint,
+                    'total_poin' => $totalpoint,
+                    'wwcd' => $wwcdpoint,
+                ]);
 
         return response()->json(array(
-            'status' => 'oke',
-            'msg' => view('poin.updatepoinmodalML', compact('id'))->render()
-        ), 200);
+            'status' => 'sukses',
+            'msg'=> 'Sukses update point.'
+        ),200);
     }
-
-    public function getDataFirst_PUBG(Request $request)
-    {
-        $id = $request->id_tim;
-
-        return response()->json(array(
-            'status' => 'oke',
-            'msg' => view('poin.updatepoinmodalPUBG', compact('id'))->render()
-        ), 200);
-    }
-
-    // public function simpanPoin_ML(Request $request){
-    //     $id = $request->id_user;
-    //     $result = $request->result;
-    //     $poin = $request->poin;
-    //     $timkill = $request->timkill;
-
-    //     $tim = DB::table('poin')
-    //             ->where('id', '=', $request->id_tim)
-    //             ->update(['poin' => $request->poin]);
-
-    //     $employee = User::find($id);
-    //     $employee->name = $name;
-    //     $employee->email = $email;
-    //     $employee->save();
-
-    //     return response()->json(array(
-    //         'status' => 'sukses',
-    //         'msg'=> 'Successfully edit employee data'
-    //     ),200);
-    // }
 }

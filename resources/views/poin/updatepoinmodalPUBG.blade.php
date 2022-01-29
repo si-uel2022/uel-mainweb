@@ -1,38 +1,40 @@
 <form action="#" method="POST">
     <div class="form-group row">
-        <label class="col-sm-12 col-form-label text-secondary text-center">{{ $tim->nama }}</label>
+        <label class="col-sm-12 col-form-label text-secondary text-center"><b>{{ $tim->nama }}</b></label>
+        <label class="col-sm-12 col-form-label text-secondary text-center">Week: {{ $tim->week }}, Day:
+            {{ $tim->day }}</label>
     </div>
     <div class="form-group row">
-        <label for="eName" class="col-sm-4 col-form-label text-secondary">Placement Point</label>
+        <label for="placementpoint" class="col-sm-4 col-form-label text-secondary">Placement Point</label>
         <div class="col-sm-8">
-            <input type="number" name="ini_nama_supplier" class="form-control" id="eName"
-                placeholder="insert employee's name" required>
+            <input type="number" name="placementpoint" class="form-control" id="pplacementpoint"
+                placeholder="masukan placement point" required>
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-sm-4 col-form-label text-secondary">Kill Point</label>
+        <label for="killpoint" class="col-sm-4 col-form-label text-secondary">Kill Point</label>
         <div class="col-sm-8">
-            <input type="number" name="email" class="form-control" id="eEmail" placeholder="insert employee's email">
+            <input type="number" name="killpoint" class="form-control" id="pkillpoint"
+                placeholder="masukan kill point">
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-sm-4 col-form-label text-secondary">Total Point</label>
+        <label for="totalpoint" class="col-sm-4 col-form-label text-secondary">Total Point</label>
         <div class="col-sm-8">
-            <input type="number" name="email" class="form-control" id="eEmail" placeholder="insert employee's email">
+            <input type="number" name="totalpoint" class="form-control" id="ptotalpoint"
+                placeholder="masukan total point">
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-sm-4 col-form-label text-secondary">WWCD Point</label>
+        <label for="wwcdpoint" class="col-sm-4 col-form-label text-secondary">WWCD Point</label>
         <div class="col-sm-8">
-            <input type="number" name="email" class="form-control" id="eEmail" placeholder="insert employee's email">
+            <input type="number" name="wwcdpoint" class="form-control" id="pwwcdpoint"
+                placeholder="masukan wwcd point">
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-12 text-right">
-            {{-- <button type="button" id="eBtnEdit" onclick="simpanPoin_ML({{ $tim->id }})"
-                class="btn btn-primary">Update</button>
-            <a href="" class="btn btn-danger">Cancel</a> --}}
-            <button type="button" id="eBtnEdit"
+            <button type="button" id="eBtnEdit" onclick="simpanPoin_ML({{ $tim->id }})"
                 class="btn btn-primary">Update</button>
             <a href="" class="btn btn-danger">Cancel</a>
         </div>
@@ -40,25 +42,31 @@
 </form>
 
 <script>
-    function simpanPoin_ML(id_user) {
+    function simpanPoin_ML(id_tim) {
         $('#eBtnEdit').html('Saving data...');
-        var name = $('#eName').val();
-        var email = $('#eEmail').val();
+        var placementpoint = $('#pplacementpoint').val();
+        var killpoint = $('#pkillpoint').val();
+        var totalpoint = $('#ptotalpoint').val();
+        var wwcdpoint = $('#pwwcdpoint').val();
 
-        $.post('{{ route('poin.simpanPoin_ML') }}', {
+        $.post('{{ route('poin.simpanPoin_PUBG') }}', {
                 _token: "<?php echo csrf_token(); ?>",
-                id_user: id_user,
-                name: name,
-                email: email
+                id_tim: id_tim,
+                placementpoint: placementpoint,
+                killpoint: killpoint,
+                totalpoint: totalpoint,
+                wwcdpoint: wwcdpoint,
             },
             function(data) {
                 $('#eBtnEdit').html('Save');
                 if (data.status == 'sukses') {
-                    $('.modal').modal('hide');
-                    $('#data_name_' + id_user).html(name);
-                    $('#data_email_' + id_user).html(email);
+                    $('#data_placement_' + id_tim).html(placementpoint);
+                    $('#data_kill_' + id_tim).html(killpoint);
+                    $('#data_total_' + id_tim).html(totalpoint);
+                    $('#data_wwcd_' + id_tim).html(wwcdpoint);
+                    $('#modal_update_poin').modal('hide');
                 }
-                // alert(data.msg);
+                alert(data.msg);
             });
     }
 </script>
