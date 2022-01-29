@@ -9,10 +9,10 @@
 <div class="row text-center">
     <div class="col-sm">
         {{-- <button class="nav-btn">Show ML</button> --}}
-        <a href="/poin/ML" class="nav-btn">&nbsp; ML &nbsp;</a>
+        <a href="/poin/ml" class="nav-btn">&nbsp; ML &nbsp;</a>
     </div>
     <div class="col-sm">
-        <a href="/poin/PUBG" class="nav-btn">&nbsp; PUBG &nbsp;</a>
+        <a href="/poin/pubg" class="nav-btn">&nbsp; PUBG &nbsp;</a>
     </div>
     <div class="col-sm">
         <a href="/poin/Valorant" class="nav-btn">&nbsp; Valorant &nbsp;</a>

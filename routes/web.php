@@ -96,5 +96,12 @@ Route::middleware(['auth'])->group(function(){
 
 //poin
 Route::get('/poin', [App\Http\Controllers\PoinController::class, 'index']);
-Route::get('/poin/{cabang}', [App\Http\Controllers\PoinController::class, 'bukaCabang']);
+Route::get('/poin/ml', [App\Http\Controllers\PoinController::class, 'bukaCabang_ML']);
+Route::get('/poin/pubg', [App\Http\Controllers\PoinController::class, 'bukaCabang_PUBG']);
+Route::post('/match/ml', [App\Http\Controllers\PoinController::class, 'match_ML'])->name('match.ml');
+Route::post('/match/pubg', [App\Http\Controllers\PoinController::class, 'match_PUBG'])->name('match.pubg');
 Route::post('poin/updatepoin/', [App\Http\Controllers\PoinController::class, 'updatePoin'])->name('poin.updatepoin');
+Route::post('poin/updatepoin_ML/', [App\Http\Controllers\PoinController::class, 'updatePoin_ML'])->name('poin.updatepoin_ML');
+Route::post('poin/updatepoin_PUBG/', [App\Http\Controllers\PoinController::class, 'updatePoin_PUBG'])->name('poin.updatepoin_PUBG');
+Route::post('poin/simpanpoin_ML/', [App\Http\Controllers\PoinController::class, 'simpanPoin_ML'])->name('poin.simpanPoin_ML');
+Route::post('poin/simpanpoin_PUBG/', [App\Http\Controllers\PoinController::class, 'simpanPoin_PUBG'])->name('poin.simpanPoin_PUBG');

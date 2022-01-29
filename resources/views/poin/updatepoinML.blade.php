@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1 class="text-center">Update Poin Cabang {{ $cabang }}</h1>
+    <h1 class="text-center">Update Poin Cabang</h1>
     <br><br><br>
     <div class="row">
         <div class="col">
