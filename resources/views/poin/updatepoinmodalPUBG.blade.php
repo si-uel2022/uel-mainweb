@@ -1,6 +1,6 @@
 <form action="#" method="POST">
     <div class="form-group row">
-        <label class="col-sm-12 col-form-label text-secondary text-center">{{ $tim }}</label>
+        <label class="col-sm-12 col-form-label text-secondary text-center">{{ $tim->nama }}</label>
     </div>
     <div class="form-group row">
         <label for="eName" class="col-sm-4 col-form-label text-secondary">Placement Point</label>

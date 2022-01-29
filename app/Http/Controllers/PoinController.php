@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poin_PUBG;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -157,11 +158,12 @@ class PoinController extends Controller
         $day = $request->day;
         $id = $request->id_tim;
 
-        $tim = DB::table('poin_pubg')
-            ->where('id', '=', $id)
-            ->where('week', '=', $week)
-            ->where('day', '=', $day)
-            ->get();
+        // $tim = DB::table('poin_pubg')
+        //     ->where('id', '=', $id)
+        //     ->where('week', '=', $week)
+        //     ->where('day', '=', $day)
+        //     ->get();
+        $tim = Poin_PUBG::find($id);
         return response()->json(array(
             'status' => 'oke',
             'msg'=>view('poin.updatepoinmodalPUBG', compact('tim'))->render()
