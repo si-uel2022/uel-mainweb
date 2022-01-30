@@ -41,6 +41,19 @@ Route::get('/alur', function () {
 Route::get('/peraturan', function () {
     return view('main.peraturan');
 });
+
+//poin user
+// Route::get('/ml', function () {
+//     return view('coba.poinML');
+// });
+Route::get('/ml', [App\Http\Controllers\ShowController::class, 'showPoinML']);
+Route::get('/pubg', function () {
+    return view('coba.poinPUBG');
+});
+Route::get('/valorant', function () {
+    return view('coba.poinValorant');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
