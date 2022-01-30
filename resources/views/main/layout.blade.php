@@ -35,6 +35,24 @@
                         </a>
                     </li>
                     <li class="nav-item active">
+                        <a href="/ml" class="selected-nav-text">
+                            Mobile Legends
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/pubg" class="selected-nav-text">
+                            PUBG
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/valorant" class="selected-nav-text">
+                            Valorant
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item active">
                         <a href="/alur" class="selected-nav-text">
                             Alur Pendaftaran
                             <span class="sr-only">(current)</span>
@@ -45,7 +63,7 @@
                             Peraturan Brand Ambassador
                             <span class="sr-only">(current)</span>
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="nav-item active">
                         <a href="/aboutus" class="nav-text">
                             About Us
@@ -58,7 +76,7 @@
                     </li> --}}
                 </ul>
     
-                <a href="/registration"><button class="nav-btn">Register Team</button></a>
+                {{-- <a href="/registration"><button class="nav-btn">Register Team</button></a> --}}
             </div>
         </nav>
 
