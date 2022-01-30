@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poin_PUBG;
+use App\Models\Poin_ML;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -84,15 +85,6 @@ class PoinController extends Controller
         //
     }
 
-    public function bukaCabang($cabang)
-    {
-        $tim = DB::table('poin')
-            ->where('cabang', '=', $cabang)
-            ->get();
-        // dd($tim);
-        return view('poin.updatepoin', compact('tim', 'cabang'));
-    }
-
     public function bukaCabang_ML()
     {
         $tim = DB::table('poin_ml')
@@ -126,29 +118,27 @@ class PoinController extends Controller
         );
     }
 
-    public function updatePoin(Request $request)
+    public function match_ML(Request $request)
     {
-
-        $tim = DB::table('poin')
-            ->where('id', '=', $request->id_tim)
-            ->update(['poin' => $request->poin]);
-
-        return response()->json(array(
-            'status' => 'oke',
-            'msg' => 'Berhasil update poin.'
-        ), 200);
+        $tim = DB::table('poin_ml')
+            ->where('grup', '=', $request->grup)
+            ->get();
+        return response()->json(
+            array(
+                'status' => 'oke',
+                'tim' => $tim
+            ),
+            200
+        );
     }
 
     public function updatePoin_ML(Request $request)
     {
-
-        $tim = DB::table('poin')
-            ->where('id', '=', $request->id_tim)
-            ->update(['poin' => $request->poin]);
-
+        $id = $request->id_tim;
+        $tim = Poin_ML::find($id);
         return response()->json(array(
             'status' => 'oke',
-            'msg' => 'Berhasil update poin.'
+            'msg' => view('poin.updatepoinmodalML', compact('tim'))->render()
         ), 200);
     }
 
@@ -167,11 +157,37 @@ class PoinController extends Controller
         $tim = Poin_PUBG::find($id);
         return response()->json(array(
             'status' => 'oke',
-            'msg'=>view('poin.updatepoinmodalPUBG', compact('tim'))->render()
-        ),200);
+            'msg' => view('poin.updatepoinmodalPUBG', compact('tim'))->render()
+        ), 200);
     }
 
-    public function simpanPoin_PUBG(Request $request){
+    public function simpanPoin_ML(Request $request)
+    {
+        $id = $request->id_tim;
+        $game = $request->game;
+        $win = $request->win;
+        $lose = $request->lose;
+        $point = $request->point;
+        $timkill = $request->timkill;
+
+        $tim = DB::table('poin_ml')
+            ->where('id', '=', $id)
+            ->update([
+                'game' => $game,
+                'win' => $win,
+                'lose' => $lose,
+                'point' => $point,
+                'tim_kill' => $timkill,
+            ]);
+
+        return response()->json(array(
+            'status' => 'sukses',
+            'msg' => 'Sukses update point.'
+        ), 200);
+    }
+
+    public function simpanPoin_PUBG(Request $request)
+    {
         $id = $request->id_tim;
         $placementpoint = $request->placementpoint;
         $killpoint = $request->killpoint;
@@ -179,17 +195,17 @@ class PoinController extends Controller
         $wwcdpoint = $request->wwcdpoint;
 
         $tim = DB::table('poin_pubg')
-                ->where('id', '=', $request->id_tim)
-                ->update([
-                    'placement_poin' => $placementpoint,
-                    'kill_poin' => $killpoint,
-                    'total_poin' => $totalpoint,
-                    'wwcd' => $wwcdpoint,
-                ]);
+            ->where('id', '=', $request->id_tim)
+            ->update([
+                'placement_poin' => $placementpoint,
+                'kill_poin' => $killpoint,
+                'total_poin' => $totalpoint,
+                'wwcd' => $wwcdpoint,
+            ]);
 
         return response()->json(array(
             'status' => 'sukses',
-            'msg'=> 'Sukses update point.'
-        ),200);
+            'msg' => 'Sukses update point.'
+        ), 200);
     }
 }

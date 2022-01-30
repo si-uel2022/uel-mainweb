@@ -34,7 +34,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-12 text-right">
-            <button type="button" id="eBtnEdit" onclick="simpanPoin_ML({{ $tim->id }})"
+            <button type="button" id="eBtnEdit" onclick="simpanPoin_PUBG({{ $tim->id }})"
                 class="btn btn-primary">Update</button>
             <a href="" class="btn btn-danger">Cancel</a>
         </div>
@@ -42,7 +42,7 @@
 </form>
 
 <script>
-    function simpanPoin_ML(id_tim) {
+    function simpanPoin_PUBG(id_tim) {
         $('#eBtnEdit').html('Saving data...');
         var placementpoint = $('#pplacementpoint').val();
         var killpoint = $('#pkillpoint').val();
