@@ -55,7 +55,7 @@
     <div class="form-group row">
         <div class="col-sm-12 text-right">
             <button type="button" id="eBtnEdit" onclick="simpanPoin_ML({{ $tim->id }})"
-                class="btn btn-primary">Update</button>
+                class="btn btn-primary" data-dismiss="modal">Update</button>
             <a href="" class="btn btn-danger">Cancel</a>
         </div>
     </div>
@@ -99,7 +99,6 @@
                     $('#data_lose_' + id_tim).html(lose);
                     $('#data_point_' + id_tim).html(point);
                     $('#data_timkill_' + id_tim).html(timkill);
-                    $('.modal').toggle();
                 }
                 alert(data.msg);
             });
