@@ -4,7 +4,7 @@
 <br><br>
 
 <h1 class="text-center">Mobile Legends</h1>
-<br><br><br>
+<br><br>
 <div class="row text-center">
     <div class="col-sm">
         <button type="button" class="nav-btn" id="btn-a">Grup A</button>
@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<br><br><br><br><br>
+<br><br><br>
 
 <div class="div" id="div-a">
     <h2 style="text-align: center">Grup A</h2>

@@ -31,7 +31,7 @@
             <table class="table table-hover table-dark">
                 <thead class="text-center">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">No</th>
                         <th scope="col">Nama Tim</th>
                         <th scope="col">Game</th>
                         <th scope="col">Win</th>

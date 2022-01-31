@@ -1,7 +1,7 @@
 <form action="#" method="POST">
     <div class="form-group row">
         <label class="col-sm-12 col-form-label text-secondary text-center"><b>{{ $tim->nama }}</b></label>
-        <label class="col-sm-12 col-form-label text-secondary text-center">Week: {{ $tim->week }}, Day:
+        <label class="col-sm-12 col-form-label text-secondary text-center">Week {{ $tim->week }}, Day
             {{ $tim->day }}</label>
     </div>
     <div class="form-group row">
@@ -35,7 +35,7 @@
     <div class="form-group row">
         <div class="col-sm-12 text-right">
             <button type="button" id="eBtnEdit" onclick="simpanPoin_PUBG({{ $tim->id }})"
-                class="btn btn-primary">Update</button>
+                class="btn btn-primary" data-dismiss="modal">Update</button>
             <a href="" class="btn btn-danger">Cancel</a>
         </div>
     </div>

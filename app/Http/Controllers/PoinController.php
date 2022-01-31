@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Poin_PUBG;
 use App\Models\Poin_ML;
+use App\Models\Poin_Valorant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -100,6 +101,11 @@ class PoinController extends Controller
             ->where('day', '=', "1")
             ->get();
         return view('poin.updatepoinPUBG', compact('tim'));
+    }
+
+    public function bukaCabang_Valorant()
+    {
+        return view('poin.updatepoinValorant');
     }
 
     public function match_PUBG(Request $request)
@@ -207,5 +213,30 @@ class PoinController extends Controller
             'status' => 'sukses',
             'msg' => 'Sukses update point.'
         ), 200);
+    }
+
+    public function simpanPoin_Valorant(Request $request)
+    {
+        $urutan = DB::table('poin_valorant')
+            ->orderBy('id', 'DESC')
+            ->limit(1)
+            ->get();
+
+        foreach($urutan as $u)
+        {
+            $nomor = $u->id;
+        }
+
+        // dd($nomor);
+
+        $poin = new Poin_Valorant();
+
+        $logoExt = $request->file('inpBracket')->getClientOriginalExtension();
+            $namaFile = 'MatchValo_'.$nomor.".".$logoExt;
+            $path = $request->file('inpBracket')->move('file_match', $namaFile);
+            $poin->bracket = $namaFile;
+        $poin->save();
+
+        return redirect()->back()->with('success', 'Update Valorant Berhasil!');
     }
 }

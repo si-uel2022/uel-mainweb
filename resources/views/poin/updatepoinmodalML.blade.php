@@ -1,7 +1,7 @@
 <form action="#" method="POST">
     <div class="form-group row">
         <label class="col-sm-12 col-form-label text-secondary text-center"><b>{{ $tim->nama }}</b></label>
-        <label class="col-sm-12 col-form-label text-secondary text-center">Grup: {{ $tim->grup }}, Week:
+        <label class="col-sm-12 col-form-label text-secondary text-center">Grup {{ $tim->grup }}, Week
             {{ $tim->week }}</label>
         <label class="col-sm-12 col-form-label text-secondary text-center">Current: {{ $tim->win }} Win, {{ $tim->lose }} Lose</label>
         <input type="hidden" name="txtWin" id="currentwin" value="{{$tim->win}}"/>

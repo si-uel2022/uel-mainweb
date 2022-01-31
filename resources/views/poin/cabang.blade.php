@@ -15,7 +15,7 @@
         <a href="/poin/pubg" class="nav-btn">&nbsp; PUBG &nbsp;</a>
     </div>
     <div class="col-sm">
-        <a href="/poin/Valorant" class="nav-btn">&nbsp; Valorant &nbsp;</a>
+        <a href="/poin/valorant" class="nav-btn">&nbsp; Valorant &nbsp;</a>
     </div>
 </div>
 
