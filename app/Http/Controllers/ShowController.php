@@ -94,4 +94,19 @@ class ShowController extends Controller
 
         return view('coba.poinML', compact('tim1', 'tim2'));
     }
+
+    public function showPoinValorant()
+    {
+        $urutan = DB::table('poin_valorant')
+            ->orderBy('id', 'DESC')
+            ->limit(1)
+            ->get();
+
+        foreach($urutan as $u)
+        {
+            $nomor = $u->bracket;
+        }
+
+        return view('coba.poinValorant', compact('nomor'));
+    }
 }

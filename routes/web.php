@@ -50,9 +50,7 @@ Route::get('/ml', [App\Http\Controllers\ShowController::class, 'showPoinML']);
 Route::get('/pubg', function () {
     return view('coba.poinPUBG');
 });
-Route::get('/valorant', function () {
-    return view('coba.poinValorant');
-});
+Route::get('/valorant', [App\Http\Controllers\ShowController::class, 'showPoinValorant']);
 
 Auth::routes();
 
