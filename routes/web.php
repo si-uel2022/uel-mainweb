@@ -118,3 +118,5 @@ Route::post('poin/updatepoin_PUBG/', [App\Http\Controllers\PoinController::class
 Route::post('poin/simpanpoin_ML/', [App\Http\Controllers\PoinController::class, 'simpanPoin_ML'])->name('poin.simpanPoin_ML');
 Route::post('poin/simpanpoin_PUBG/', [App\Http\Controllers\PoinController::class, 'simpanPoin_PUBG'])->name('poin.simpanPoin_PUBG');
 Route::post('poin/simpanpoin_Valorant/', [App\Http\Controllers\PoinController::class, 'simpanPoin_Valorant'])->name('poin.simpanPoin_Valorant');
+
+Route::get('/klasemen',  [App\Http\Controllers\KlasemenController::class, 'index']);

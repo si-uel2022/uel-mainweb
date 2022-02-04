@@ -10,7 +10,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <br><br>
-    <h1 class="text-center">PUBG</h1><br><br>
+    <h1 class="text-center klasemen-bigtext">PUBG</h1><br><br>
 
     <div class="row">
         <div class="col-2">
@@ -33,8 +33,8 @@
 
     <div class="row">
         <div class="col">
-            <table class="table table-hover table-dark">
-                <thead class="text-center">
+            <table class="table table-hover">
+                <thead class="text-center klasemen-table-header">
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama Tim</th>
@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody id="contenttable">
-                    <tr class="text-center">
+                    <tr class="text-center klasemen-table">
                         <td colspan="7">Silahkan pilih waktu terlebih dahulu.</td>
                     </tr>
                 </tbody>
@@ -70,7 +70,7 @@
                         table.html("");
                         for (var i = 0; i < data.tim.length; i++) {
                             table.append(
-                                "<tr class='text-center'>" +
+                                "<tr class='text-center klasemen-table'>" +
                                 '<td>' + parseInt(i + 1) + '</td>' +
                                 '<td>' + data.tim[i]['nama'] + '</td>' +
                                 '<td id="data_placement_'+ data.tim[i]['id'] +'">' + data.tim[i]['placement_poin'] + '</td>' +

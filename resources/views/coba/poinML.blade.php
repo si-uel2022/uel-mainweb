@@ -3,7 +3,7 @@
 @section("content")
 <br><br>
 
-<h1 class="text-center">Mobile Legends</h1>
+<h1 class="text-center klasemen-bigtext" >Mobile Legends</h1>
 <br><br>
 <div class="row text-center">
     <div class="col-sm">
@@ -17,12 +17,12 @@
 <br><br><br>
 
 <div class="div" id="div-a">
-    <h2 style="text-align: center">Grup A</h2>
+    <h2 style="text-align: center" class="klasemen-bigtext">Grup A</h2>
     <hr class="border border-primary"/>
     <div class="table-responsive">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover">
             <thead>
-            <tr align="center" style="color: white">
+            <tr align="center" style="color: white" class="klasemen-table-header">
                 <th>No</th>
                 <th>Team</th>
                 <th>Game</th>
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
                 @foreach ($tim1 as $t)
-                <tr align="center">
+                <tr align="center" class="klasemen-table">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $t->nama }}</td>
                     <td>{{ $t->game }}</td>
@@ -50,12 +50,12 @@
 </div>
 
 <div class="div" id="div-b">
-    <h2 style="text-align: center">Grup B</h2>
+    <h2 style="text-align: center" class="klasemen-bigtext">Grup B</h2>
     <hr class="border border-primary"/>
     <div class="table-responsive">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover">
             <thead>
-            <tr align="center" style="color: white">
+            <tr align="center" style="color: white" class="klasemen-table-header">
                 <th>No</th>
                 <th>Team</th>
                 <th>Game</th>
@@ -67,7 +67,7 @@
             </thead>
             <tbody>
                 @foreach ($tim2 as $t)
-                <tr align="center">
+                <tr align="center" class="klasemen-table">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $t->nama }}</td>
                     <td>{{ $t->game }}</td>
