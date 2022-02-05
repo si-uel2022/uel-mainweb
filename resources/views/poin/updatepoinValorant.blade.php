@@ -15,7 +15,7 @@
     @endif
 
     <h1 class="text-center">Update Poin Valorant</h1><br>
-
+{{-- 
     <form action="{{url('poin/simpanpoin_Valorant')}}" enctype="multipart/form-data" method="POST" class="form-input">
     @csrf
         <input type="file" name="inpBracket" class="textbox form-control" required> <br>
@@ -26,5 +26,7 @@
             </div>
             <div class="col-sm"></div>
         </div>
-    </form>
+    </form> --}}
+
+    <iframe src="https://challonge.com/uelueluel/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 @endsection
